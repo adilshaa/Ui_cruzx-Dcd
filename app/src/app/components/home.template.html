@@ -81,20 +81,19 @@
         </div>
       </div>
     </div>
-    <div fxLayout="column wrap" style="padding-top:20px" fxLayoutAlign="start stretch" [fxShow]="true">
-      <h2 class="primary_color">
-        Premium Calculation</h2>
-      <div>
-        Please select one of our plans by selecting the premium card</div>
+    <div fxLayout="column wrap" fxLayoutAlign="start start" [fxShow]="true">
+      <h2 style="padding-top:10px" class="primary_color">
+        Premium Calculation</h2><span>
+                Please select one of our plans by selecting the premium card</span>
     </div>
-    <div fxLayout="column wrap" class="insuring" fxLayoutAlign="center center" [fxShow]="true" [style.padding-top.px]="!page.insureModal?10:40">
-      <div fxHide="{{!page.insureModal}}" style="width:30%;padding:4px;background-color:gray;border-radius:10px">
+    <div fxLayout="column wrap" class="insuring" fxLayoutAlign="center center" [fxShow]="true" [style.padding-top.px]="!page.insureModal?10:30" fxHide.gt-md="true">
+      <div fxHide="{{!page.insureModal}}" style="width:30%;padding:4px;background-color:#00000014;border-radius:10px">
       </div>
-      <div (click)="insureUp()" style="padding-top:0px">
-        <mat-icon style="color:black;font-size:45px;width:50px" fxShow="{{page.insureModal}}">expand_more</mat-icon><mat-icon style="color:black;font-size:45px;width:50px" fxHide="{{page.insureModal}}">expand_less</mat-icon>
+      <div (click)="insureUp()" style="padding-top:5px;color:#00000014">
+        <mat-icon style="color:#00000014;font-size:45px;width:50px" fxShow="{{page.insureModal}}">expand_more</mat-icon><mat-icon style="color:#00000014;font-size:45px;width:50px" fxHide="{{page.insureModal}}">expand_less</mat-icon>
       </div>
-      <div fxLayout="column wrap" style="width: 100%;padding:25px" fxLayoutAlign="space-around space-around" [fxShow]="page.insureModal">
-        <div fxLayout="row wrap" style="width:85%;color:black;padding-top:5px" fxLayoutAlign="space-between stretch" [fxShow]="true">
+      <div fxLayout="column wrap" style="width: 100%;padding:5px" fxLayoutAlign="space-around space-around" [fxShow]="page.insureModal">
+        <div fxLayout="row wrap" style="width:85%;color:black;" fxLayoutAlign="space-between stretch" [fxShow]="true">
           <div fxLayout="row wrap" style="width:78%;font-weight:400" class="insurecard" fxLayoutAlign="start stretch" [fxShow]="true">
             <div style="font-weight:400">
               Premium (Silver)</div>
@@ -143,7 +142,7 @@
           </div>
         </div>
       </div>
-      <div fxLayout="row wrap" style="width:90%;height:60px;background:#218BC4;border-radius:30px;padding:20px" fxLayoutAlign="space-between center" [fxShow]="true">
+      <div fxLayout="row wrap" style="width:90%;height:60px;background:#218BC4;border-radius:30px;padding:20px;margin-top:20px" fxLayoutAlign="space-between center" [fxShow]="true">
         <div fxLayout="column wrap" style="padding:10px" fxLayoutAlign="start start" [fxShow]="true">
           <div>
             Total premium (smart)</div>
@@ -176,7 +175,7 @@
             <div>
               <img imgSrc="/Web/Icons/Comperhensive (1)/tabby@2x.png" style="padding-top:5px" width="60px">
             </div>
-            <div>
+            <div style="font-size:12px">
               4 interest free payments of SR 174.75 <a style="color:blue">Learn More</a></div>
             <div>
             </div>
@@ -232,7 +231,7 @@
             <div>
               <img imgSrc="/Web/Icons/Comperhensive (1)/tabby@2x.png" style="padding-top:5px" width="60px">
             </div>
-            <div>
+            <div style="font-size:12px">
               4 interest free payments of SR 174.75 <a style="color:blue">Learn More</a></div>
             <div>
             </div>
@@ -288,7 +287,7 @@
             <div>
               <img imgSrc="/Web/Icons/Comperhensive (1)/tabby@2x.png" style="padding-top:5px" width="60px">
             </div>
-            <div>
+            <div style="font-size:12px">
               4 interest free payments of SR 174.75 <a style="color:blue">Learn More</a></div>
             <div>
             </div>

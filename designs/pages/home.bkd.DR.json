@@ -6361,7 +6361,7 @@
                     },
                     {
                         "_key": "style",
-                        "_value": "padding-top:20px",
+                        "_value": "",
                         "_type": "kv",
                         "_attrDef": "p"
                     },
@@ -6397,7 +6397,7 @@
                     },
                     {
                         "_key": "pLayoutAlign",
-                        "_value": "stretch",
+                        "_value": "start",
                         "_type": "a",
                         "_attrDef": "p"
                     },
@@ -6416,7 +6416,7 @@
                     "designerReference": [
                         {
                             "_key": "style",
-                            "_value": "",
+                            "_value": "padding-top:10px",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -6644,14 +6644,14 @@
                         },
                         {
                             "_key": "htmlElement",
-                            "_value": "div",
+                            "_value": "span",
                             "_type": "dav",
                             "_attrDef": "p",
                             "_useAsLabel": true
                         },
                         {
                             "_key": "tagType",
-                            "_value": "",
+                            "_value": "span",
                             "_type": "a",
                             "_attrDef": "p",
                             "_visibility": false
@@ -6903,7 +6903,13 @@
                     },
                     {
                         "_key": "[style.padding-top.px]",
-                        "_value": "!page.insureModal?10:40",
+                        "_value": "!page.insureModal?10:30",
+                        "_type": "kv",
+                        "_attrDef": "c"
+                    },
+                    {
+                        "_key": "fxHide.gt-md",
+                        "_value": "true",
                         "_type": "kv",
                         "_attrDef": "c"
                     }
@@ -6916,7 +6922,7 @@
                     "designerReference": [
                         {
                             "_key": "style",
-                            "_value": "width:30%;padding:4px;background-color:gray;border-radius:10px",
+                            "_value": "width:30%;padding:4px;background-color:#00000014;border-radius:10px",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -7136,7 +7142,7 @@
                     "designerReference": [
                         {
                             "_key": "style",
-                            "_value": "padding-top:0px",
+                            "_value": "padding-top:5px;color:#00000014",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -7335,7 +7341,7 @@
                         "designerReference": [
                             {
                                 "_key": "style",
-                                "_value": "color:black;font-size:45px;width:50px",
+                                "_value": "color:#00000014;font-size:45px;width:50px",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
@@ -7379,7 +7385,7 @@
                         "designerReference": [
                             {
                                 "_key": "style",
-                                "_value": "color:black;font-size:45px;width:50px",
+                                "_value": "color:#00000014;font-size:45px;width:50px",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
@@ -7431,7 +7437,7 @@
                         },
                         {
                             "_key": "style",
-                            "_value": "width: 100%;padding:25px",
+                            "_value": "width: 100%;padding:5px",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -7493,7 +7499,7 @@
                             },
                             {
                                 "_key": "style",
-                                "_value": "width:85%;color:black;padding-top:5px",
+                                "_value": "width:85%;color:black;",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
@@ -10822,7 +10828,7 @@
                         },
                         {
                             "_key": "style",
-                            "_value": "width:90%;height:60px;background:#218BC4;border-radius:30px;padding:20px",
+                            "_value": "width:90%;height:60px;background:#218BC4;border-radius:30px;padding:20px;margin-top:20px",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -13513,7 +13519,7 @@
                                 "designerReference": [
                                     {
                                         "_key": "style",
-                                        "_value": "",
+                                        "_value": "font-size:12px",
                                         "_type": "kv",
                                         "_attrDef": "p"
                                     },
@@ -17903,7 +17909,7 @@
                                 "designerReference": [
                                     {
                                         "_key": "style",
-                                        "_value": "",
+                                        "_value": "font-size:12px",
                                         "_type": "kv",
                                         "_attrDef": "p"
                                     },
@@ -22319,7 +22325,7 @@
                                 "designerReference": [
                                     {
                                         "_key": "style",
-                                        "_value": "",
+                                        "_value": "font-size:12px",
                                         "_type": "kv",
                                         "_attrDef": "p"
                                     },
