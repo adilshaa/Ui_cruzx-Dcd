@@ -69,6 +69,21 @@ export class homeComponent {
       return this.errorHandler(bh, e, 'sd_b3zJV0bwyMn1m7dG');
     }
   }
+
+  modalController(types: any = undefined, content: any = undefined, ...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = { types, content };
+      bh.local = {};
+      bh = this.sd_KViMFN3fLVMskZ68(bh);
+      //appendnew_next_modalController
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_0RAscsre6mPJ3SI2');
+    }
+  }
   //appendnew_flow_homeComponent_start
 
   sd_vGm5AyHgi7KgsyyZ(bh) {
@@ -84,7 +99,10 @@ export class homeComponent {
   sd_oExKQDkOnt8mJjGF(bh) {
     try {
       const page = this.page;
-      page.insureModal = false;
+      page.insureModal = true;
+      page.leftModal = true;
+      page.centerModal = false;
+      page.modalContent = '';
       //appendnew_next_sd_oExKQDkOnt8mJjGF
       return bh;
     } catch (e) {
@@ -105,6 +123,36 @@ export class homeComponent {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_3uav6M1viC3WLmzu');
+    }
+  }
+
+  sd_KViMFN3fLVMskZ68(bh) {
+    try {
+      const page = this.page;
+      let types = bh.input.types;
+      let content = bh.input.content;
+
+      page.modalContent = content;
+
+      const left = () => {
+        if (!page.leftModal) page.leftModal = true;
+        else page.leftModal = false;
+      };
+      const center = () => {
+        if (!page.centerModal) page.centerModal = true;
+        else page.centerModal = false;
+      };
+
+      if (types === 'left') {
+        left();
+      } else if (types === 'center') {
+        center();
+      }
+
+      //appendnew_next_sd_KViMFN3fLVMskZ68
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_KViMFN3fLVMskZ68');
     }
   }
 
