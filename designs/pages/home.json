@@ -69,7 +69,7 @@
         "functionName": "insureUp",
         "category": "General",
         "x": 45,
-        "y": 160,
+        "y": 140,
         "wires": [
             [
                 "sd_3uav6M1viC3WLmzu"
@@ -106,11 +106,72 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "page.insureModal=false ",
+        "script": "page.insureModal=true \npage.leftModal=true\npage.centerModal=false\npage.modalContent=''",
         "functionName": "sd_oExKQDkOnt8mJjGF",
         "category": "Function",
         "x": 305,
         "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "homeComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_0RAscsre6mPJ3SI2",
+        "type": "PageStart",
+        "z": "sd_wWomRIpOPlKqIc3T",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "modalController",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "types",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "content",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "modalController",
+        "category": "General",
+        "x": 340,
+        "y": 160,
+        "wires": [
+            [
+                "sd_KViMFN3fLVMskZ68"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "homeComponent"
+    },
+    {
+        "id": "sd_KViMFN3fLVMskZ68",
+        "type": "Script",
+        "z": "sd_wWomRIpOPlKqIc3T",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "let types=bh.input.types\nlet content=bh.input.content\n\npage.modalContent=content\n\n\nconst left =()=>{\n    if(!page.leftModal)\n    page.leftModal=true\n    else page.leftModal=false\n}\nconst center =()=>{\n    if(!page.centerModal)\n    page.centerModal=true\n    else page.centerModal=false\n}\n\nif(types==='left'){\n    left()\n}else if(types==='center'){\n    center()\n}\n\n",
+        "functionName": "sd_KViMFN3fLVMskZ68",
+        "category": "Function",
+        "x": 480,
+        "y": 140,
         "wires": [
             []
         ],

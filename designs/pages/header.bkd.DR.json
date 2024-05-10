@@ -2605,7 +2605,7 @@
                             },
                             {
                                 "_key": "IconName",
-                                "_value": "info",
+                                "_value": "error_outline",
                                 "_type": "a",
                                 "_attrDef": "p",
                                 "_useAsLabel": true

@@ -9,6 +9,9 @@
         "insurecard",
         "check_details_hole",
         "vertical_div",
-        "dash"
+        "dash",
+        "left_modal",
+        "center_modal",
+        "left_hit_ani"
     ]
 }
