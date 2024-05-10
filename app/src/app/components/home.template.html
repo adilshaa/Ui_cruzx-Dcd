@@ -208,7 +208,7 @@
           </div>
         </div>
         <div fxLayout="row wrap" style="color:#00B1AB;width:100%;height:40px;border-radius:0px 0px 20px 20px; background:#EFF4F7;margin-top:20px" fxLayoutAlign="center center" [fxShow]="true">
-          <div>
+          <div (click)="modalController(&apos;left&apos;,&apos;basic&apos;)">
             Cheak details</div>
         </div>
       </div>
@@ -327,9 +327,129 @@
     </div>
   </div>
 </div>
-<div fxLayout="column wrap" class="left_modal" fxLayoutAlign="start center" [fxShow]="true" fxShow.gt-md="{{page.leftModal}}">
+<div fxLayout="column wrap" class="left_modal" fxLayoutAlign="start center" [fxShow]="true" fxShow.gt-md="{{page.leftModal}}" fxHide.lt-md="true">
   <div style="  position: absolute;   top: 5px;   right: 5px;   width: 25px;  height: 25px;background: gray;   border-radius: 50%;   display: flex;   justify-content: center;   align-items: center;   color: white;">
     <mat-icon style="font-size:15px;padding-top:10px;padding-left:5px">close</mat-icon>
+  </div>
+  <div fxLayout="column wrap" style="width:100%" class="left_hit_ani" fxLayoutAlign="center center" [fxShow]="page.modalContent==&apos;basic&apos;">
+    <div fxLayout="column wrap" style="width:90%;margin-top:30px" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div style="font-size:25px;color:#00B1AB;font-weight:600">
+        Wafi Basic</div>
+    </div>
+    <div fxLayout="row wrap" style="width:90%;height:35px;background:#EFF4F7;margin-top:10px;border-radius:15px;padding:5px" fxLayoutAlign="space-between center" [fxShow]="true">
+      <div>
+        Premium Details</div>
+      <div>
+        <mat-icon style="font-size:15px;padding-top:10px;padding-left:5px">expand_more</mat-icon>
+      </div>
+    </div>
+    <div fxLayout="column wrap" style="width:90%;background:#E4F9F9;margin-top:10px;border-radius:15px;padding: 15px ;" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div style="font-size: 14px;font-weight:600;color:#475973">
+        Benefits list</div>
+      <div style="font-size: 14px;font-weight:400;color:#516684;padding-top:5px">
+        Third Party Liability Up to SAR 10 m</div>
+      <div style="font-size: 14px;font-weight:400;padding-top:5px;color:#516684">
+        No Claims Discount benefit</div>
+      <div style="font-size: 14px;font-weight:400;color:#516684;padding-top:5px">
+        Loyalty discount benefit</div>
+      <div style="font-size: 14px;font-weight:400;color:#516684;padding-top:5px">
+        Multi vehicle discount benefit</div>
+      <div style="font-size: 14px;font-weight:400;color:#516684;padding-top:5px">
+        Claim in a click</div>
+      <div style="font-size: 14px;font-weight:600;color:#475973">
+        Optional Benefits</div>
+      <div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true">
+        <div style="width:60%;font-size: 14px;font-weight:400;color:#516684;">
+          Claim in a click</div>
+        <div fxLayout="row wrap" style="width:40%" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div style="font-size: 14px;font-weight:400;color:#516684;">
+            SR <span style="font-weight:600"> 200</span></div>
+          <div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true">
+            <div style="color:#516684;font-size: 10px;">
+              <mat-icon style="color:#516684;font-size: 15px; width:15px;">check_circle_outline</mat-icon>
+            </div>
+            <div style="font-size: 14px;font-weight:400;color:#516684;">
+              Added</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div fxLayout="column wrap" style="width:90%;margin-top:10px;border-radius:15px;padding: 15px ;" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div style="font-size: 18px;font-weight:600;color:#FF0000">
+        Benefits list</div>
+      <div style="font-size: 14px;font-weight:400;color:#516684;padding-top:5px">
+        Personal accident (driver)</div>
+      <div style="font-size: 14px;font-weight:400;color:#516684;padding-top:5px">
+        Personal accident (passengers)</div>
+      <div style="font-size: 14px;font-weight:400;color:#516684;padding-top:5px">
+        Roadside assistance</div>
+      <div style="font-size: 14px;font-weight:400;padding-top:5px;color:#516684">
+        GCC extension</div>
+      <div style="font-size: 14px;font-weight:400;color:#516684;padding-top:5px">
+        Out-patient department costs</div>
+      <div style="font-size: 14px;font-weight:400;color:#516684;padding-top:5px">
+        Multi vehicle discount benefit</div>
+    </div>
+  </div>
+  <div fxLayout="column wrap" style="width:90%" class="left_hit_ani" fxLayoutAlign="center center" [fxShow]="page.modalContent==&apos;start&apos;">
+    <div fxLayout="column wrap" style="width:90%;margin-top:30px" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div style="font-size:25px;color:#00B1AB;font-weight:600">
+        Wafi Basic</div>
+    </div>
+    <div fxLayout="row wrap" style="width:90%;height:35px;background:#EFF4F7;margin-top:10px;border-radius:15px;padding:5px" fxLayoutAlign="space-between center" [fxShow]="true">
+      <div>
+        Premium Details</div>
+      <div>
+        <mat-icon style="font-size:15px;padding-top:10px;padding-left:5px">expand_more</mat-icon>
+      </div>
+    </div>
+    <div fxLayout="column wrap" style="width:90%;background:#E4F9F9;margin-top:10px;border-radius:15px;padding: 15px ;" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div style="font-size: 14px;font-weight:600;color:#475973">
+        Benefits list</div>
+      <div style="font-size: 14px;font-weight:400;color:#516684;padding-top:5px">
+        Third Party Liability Up to SAR 10 m</div>
+      <div style="font-size: 14px;font-weight:400;padding-top:5px;color:#516684">
+        No Claims Discount benefit</div>
+      <div style="font-size: 14px;font-weight:400;color:#516684;padding-top:5px">
+        Loyalty discount benefit</div>
+      <div style="font-size: 14px;font-weight:400;color:#516684;padding-top:5px">
+        Multi vehicle discount benefit</div>
+      <div style="font-size: 14px;font-weight:400;color:#516684;padding-top:5px">
+        Claim in a click</div>
+      <div style="font-size: 14px;font-weight:600;color:#475973">
+        Optional Benefits</div>
+      <div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true">
+        <div style="width:60%;font-size: 14px;font-weight:400;color:#516684;">
+          Claim in a click</div>
+        <div fxLayout="row wrap" style="width:40%" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div style="font-size: 14px;font-weight:400;color:#516684;">
+            SR <span style="font-weight:600"> 200</span></div>
+          <div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true">
+            <div style="color:#516684;font-size: 10px;">
+              <mat-icon style="color:#516684;font-size: 15px; width:15px;">check_circle_outline</mat-icon>
+            </div>
+            <div style="font-size: 14px;font-weight:400;color:#516684;">
+              Added</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div fxLayout="column wrap" style="width:90%;margin-top:10px;border-radius:15px;padding: 15px ;" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div style="font-size: 18px;font-weight:600;color:#FF0000">
+        Benefits list</div>
+      <div style="font-size: 14px;font-weight:400;color:#516684;padding-top:5px">
+        Personal accident (driver)</div>
+      <div style="font-size: 14px;font-weight:400;color:#516684;padding-top:5px">
+        Personal accident (passengers)</div>
+      <div style="font-size: 14px;font-weight:400;color:#516684;padding-top:5px">
+        Roadside assistance</div>
+      <div style="font-size: 14px;font-weight:400;padding-top:5px;color:#516684">
+        GCC extension</div>
+      <div style="font-size: 14px;font-weight:400;color:#516684;padding-top:5px">
+        Out-patient department costs</div>
+      <div style="font-size: 14px;font-weight:400;color:#516684;padding-top:5px">
+        Multi vehicle discount benefit</div>
+    </div>
   </div>
   <div fxLayout="column wrap" style="position:fixed;bottom:0;width:400px;background:#EFF4F7;padding:20px" fxLayoutAlign="space-around center" [fxShow]="true">
     <div fxLayout="column wrap" style="width:100%" fxLayoutAlign="start stretch" [fxShow]="true">
@@ -342,9 +462,20 @@
       </div>
       <div style="width:90%;font-size:14px;color:#475973">
         Excluded Benefits included on Wafi Smart &amp; Wafi Comprehansive</div>
+      <div fxLayout="row wrap" style="width:100%" fxLayoutAlign="space-between stretch" [fxShow]="true">
+        <div>
+          <button mat-button (click)="modalController(&apos;left&apos;,&apos;basic&apos;)">Wafi Basic</button>
+        </div>
+        <div>
+          <button mat-button (click)="modalController(left,smart)">Wafi smart</button>
+        </div>
+        <div>
+          <button mat-button>Button</button>
+        </div>
+      </div>
     </div>
   </div>
-  <div fxLayout="column wrap" style="width:90%" class="left_hit_ani" fxLayoutAlign="center center" [fxShow]="true">
+  <div fxLayout="column wrap" style="width:90%" class="left_hit_ani" fxLayoutAlign="center center" [fxShow]="false">
     <div fxLayout="column wrap" style="width:90%;margin-top:30px" fxLayoutAlign="start stretch" [fxShow]="true">
       <div style="font-size:25px;color:#00B1AB;font-weight:600">
         Wafi Basic</div>

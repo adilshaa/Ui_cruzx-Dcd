@@ -84,6 +84,21 @@ export class homeComponent {
       return this.errorHandler(bh, e, 'sd_0RAscsre6mPJ3SI2');
     }
   }
+
+  openModal(...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = {};
+      bh.local = {};
+      bh = this.sd_pi4OYqzmmUDlzvI0(bh);
+      //appendnew_next_openModal
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_cxtZhBAMOlkHKroZ');
+    }
+  }
   //appendnew_flow_homeComponent_start
 
   sd_vGm5AyHgi7KgsyyZ(bh) {
@@ -99,8 +114,8 @@ export class homeComponent {
   sd_oExKQDkOnt8mJjGF(bh) {
     try {
       const page = this.page;
-      page.insureModal = true;
-      page.leftModal = true;
+      page.insureModal = false;
+      page.leftModal = false;
       page.centerModal = false;
       page.modalContent = '';
       //appendnew_next_sd_oExKQDkOnt8mJjGF
@@ -132,6 +147,7 @@ export class homeComponent {
       let types = bh.input.types;
       let content = bh.input.content;
 
+      console.log(types, content);
       page.modalContent = content;
 
       const left = () => {
@@ -153,6 +169,15 @@ export class homeComponent {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_KViMFN3fLVMskZ68');
+    }
+  }
+
+  sd_pi4OYqzmmUDlzvI0(bh) {
+    try {
+      //appendnew_next_sd_pi4OYqzmmUDlzvI0
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_pi4OYqzmmUDlzvI0');
     }
   }
 

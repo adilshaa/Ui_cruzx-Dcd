@@ -106,7 +106,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "page.insureModal=true \npage.leftModal=true\npage.centerModal=false\npage.modalContent=''",
+        "script": "page.insureModal=false \npage.leftModal=false\npage.centerModal=false\npage.modalContent=''",
         "functionName": "sd_oExKQDkOnt8mJjGF",
         "category": "Function",
         "x": 305,
@@ -149,7 +149,7 @@
         "flow_type": "sync",
         "functionName": "modalController",
         "category": "General",
-        "x": 340,
+        "x": 285,
         "y": 160,
         "wires": [
             [
@@ -167,11 +167,55 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "let types=bh.input.types\nlet content=bh.input.content\n\npage.modalContent=content\n\n\nconst left =()=>{\n    if(!page.leftModal)\n    page.leftModal=true\n    else page.leftModal=false\n}\nconst center =()=>{\n    if(!page.centerModal)\n    page.centerModal=true\n    else page.centerModal=false\n}\n\nif(types==='left'){\n    left()\n}else if(types==='center'){\n    center()\n}\n\n",
+        "script": "let types=bh.input.types\nlet content=bh.input.content\n\nconsole.log(types,content)\npage.modalContent=content\n\n\nconst left =()=>{\n    if(!page.leftModal)\n    page.leftModal=true\n    else page.leftModal=false\n}\nconst center =()=>{\n    if(!page.centerModal)\n    page.centerModal=true\n    else page.centerModal=false\n}\n\nif(types==='left'){\n    left()\n}else if(types==='center'){\n    center()\n}\n\n",
         "functionName": "sd_KViMFN3fLVMskZ68",
         "category": "Function",
         "x": 480,
         "y": 140,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "homeComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_cxtZhBAMOlkHKroZ",
+        "type": "PageStart",
+        "z": "sd_wWomRIpOPlKqIc3T",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "openModal",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "openModal",
+        "category": "General",
+        "x": 60,
+        "y": 240,
+        "wires": [
+            [
+                "sd_pi4OYqzmmUDlzvI0"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "homeComponent"
+    },
+    {
+        "id": "sd_pi4OYqzmmUDlzvI0",
+        "type": "Script",
+        "z": "sd_wWomRIpOPlKqIc3T",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\n",
+        "functionName": "sd_pi4OYqzmmUDlzvI0",
+        "category": "Function",
+        "x": 220,
+        "y": 260,
         "wires": [
             []
         ],
