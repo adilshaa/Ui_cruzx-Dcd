@@ -1,0 +1,330 @@
+<bh-header></bh-header>
+<div fxLayout="row wrap" class="overlay_black" fxLayoutAlign="start stretch" [fxShow]="page.insureModal"></div>
+<div fxLayout="column wrap" style=" background-color: #F7F9FA;" fxLayoutAlign="start center" [fxShow]="true">
+  <div fxLayout="column wrap" style="font-weight:500;color:#475973" class="container" fxLayoutAlign="start start" [fxShow]="true">
+    <div fxLayout="row wrap" style="width:100%;margin-top:60px;" fxLayoutAlign="start center" [fxShow]="true" fxHide.gt-md="true">
+      <div fxFlex.lf-md="20" style="width:50px;height:50px;border-radius:100px;color:#fff;display:flex;justify-content:center;align-items:center" class="primary_bg">
+        1 of 2</div>
+      <div fxLayout="column wrap" style="margin-left:20px" fxLayoutAlign="start stretch" [fxShow]="true" fxFlex.lt-md="80">
+        <div style="color:#218BC4;font-weight:500">
+          Current step: Premium Calculation</div>
+        <div style="color:#475973;font-weight:500">
+          Next Step: Payment Confirmation</div>
+      </div>
+    </div>
+    <div fxLayout="column wrap" style="padding-top:20px;" fxLayoutAlign="start stretch" [fxShow]="true" fxHide.lt-md="ture">
+      <h2 class="primary_color">
+        Premium caluculation &amp; Quotation</h2>
+      <div>
+        Hi, <span style="color:#218BC4">  Abdulaziz </span> this Quotation customized for you,<span style="color:#218BC4">  its 2 step </span> more to get your policy</div>
+    </div>
+    <div fxLayout="column wrap" style="padding-top:20px" fxLayoutAlign="start stretch" [fxShow]="true" fxHide.gt-md="true">
+      <h2 class="primary_color">
+        Quotation</h2>
+      <div>
+        Hi, <span style="color:#218BC4">  Abdulaziz </span> this Quotation customized for you,<span style="color:#218BC4">  its 2 step </span> more to get your policy</div>
+    </div>
+    <div fxLayout="column wrap" style="height:auto;width:100%;padding:20px;background:#ffffff ;border-radius:10px;margin-top:20px" fxLayoutAlign="start start" [fxShow]="true">
+      <div fxLayout="row wrap" style="width:100%" fxLayoutAlign="space-between center" [fxShow]="true" fxLayout.gt-md="column" fxHide.gt-md="true">
+        <div fxLayout="row wrap" style="width:80%" fxLayoutAlign="start center" [fxShow]="true">
+          <div>
+            <img imgSrc="/Web/Icons/ford-logo.png" width="60px">
+          </div>
+          <div fxLayout="column wrap" style="padding-left:20px" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div style="color:#AEB8C7">
+              model</div>
+            <div style="font-weight:600;color:#475973">
+              Ford Fusion</div>
+          </div>
+        </div>
+        <div>
+          <mat-icon>expand_less</mat-icon>
+        </div>
+      </div>
+      <div fxHide.gt-md="true" class="dash">
+      </div>
+      <div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true" fxLayoutGap.gt-md="50">
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" fxFlex.lt-md="50" fxHide.lt-md="true">
+          <div>
+            <img imgSrc="/Web/Icons/ford-logo.png" width="60px">
+          </div>
+        </div>
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" fxFlex.lt-md="50" fxHide.lt-md="true">
+          <div style="color:#AEB8C7">
+            Plate Number</div>
+          <div style="padding-top:5px;font-weight:600;color:#475973">
+            Plate Number</div>
+        </div>
+        <div fxLayout="column wrap" style="padding:10px" fxLayoutAlign="start stretch" [fxShow]="true" fxFlex.lt-md="50">
+          <div style="color:#AEB8C7">
+            Plate Number</div>
+          <div style="padding-top:5px;font-weight:600;color:#475973">
+            &#x628; &#x637; &#x62D; 4632</div>
+        </div>
+        <div fxLayout="column wrap" style="padding:10px" fxLayoutAlign="start stretch" [fxShow]="true" fxFlex.lt-md="50">
+          <div style="color:#AEB8C7">
+            color</div>
+          <div style="padding-top:5px;font-weight:600;color:#475973">
+            Red</div>
+        </div>
+        <div fxLayout="column wrap" style="padding:10px" fxLayoutAlign="start stretch" [fxShow]="true" fxFlex.lt-md="50">
+          <div style="color:#AEB8C7">
+            Manufacturing year</div>
+          <div style="padding-top:5px;font-weight:600;color:#475973">
+            2023</div>
+        </div>
+        <div fxLayout="column wrap" style="padding:10px" fxLayoutAlign="start stretch" [fxShow]="true" fxFlex.lt-md="50">
+          <div style="color:#AEB8C7">
+            Sequence Number</div>
+          <div style="padding-top:5px;font-weight:600;color:#475973">
+            25954010</div>
+        </div>
+      </div>
+    </div>
+    <div fxLayout="column wrap" style="padding-top:20px" fxLayoutAlign="start stretch" [fxShow]="true">
+      <h2 class="primary_color">
+        Premium Calculation</h2>
+      <div>
+        Please select one of our plans by selecting the premium card</div>
+    </div>
+    <div fxLayout="column wrap" class="insuring" fxLayoutAlign="center center" [fxShow]="true" [style.padding-top.px]="!page.insureModal?10:40">
+      <div fxHide="{{!page.insureModal}}" style="width:30%;padding:4px;background-color:gray;border-radius:10px">
+      </div>
+      <div (click)="insureUp()" style="padding-top:0px">
+        <mat-icon style="color:black;font-size:45px;width:50px" fxShow="{{page.insureModal}}">expand_more</mat-icon><mat-icon style="color:black;font-size:45px;width:50px" fxHide="{{page.insureModal}}">expand_less</mat-icon>
+      </div>
+      <div fxLayout="column wrap" style="width: 100%;padding:25px" fxLayoutAlign="space-around space-around" [fxShow]="page.insureModal">
+        <div fxLayout="row wrap" style="width:85%;color:black;padding-top:5px" fxLayoutAlign="space-between stretch" [fxShow]="true">
+          <div fxLayout="row wrap" style="width:78%;font-weight:400" class="insurecard" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div style="font-weight:400">
+              Premium (Silver)</div>
+          </div>
+          <div fxLayout="row wrap" class="insurecard" fxLayoutAlign="space-between stretch" [fxShow]="true">
+            <div style="font-size:12px">
+              SAR</div>
+            <div>
+              4000</div>
+          </div>
+        </div>
+        <div fxLayout="row wrap" style="width:85%;color:black;padding-top:5px" fxLayoutAlign="space-between stretch" [fxShow]="true">
+          <div fxLayout="row wrap" style="width:78%;font-weight:400" class="insurecard" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div style="font-weight:600">
+              Addon 1</div>
+          </div>
+          <div fxLayout="row wrap" class="insurecard" fxLayoutAlign="space-between stretch" [fxShow]="true">
+            <div style="font-size:12px">
+              SAR</div>
+            <div>
+              250</div>
+          </div>
+        </div>
+        <div fxLayout="row wrap" style="width:85%;color:black;padding-top:5px" fxLayoutAlign="space-between stretch" [fxShow]="true">
+          <div fxLayout="row wrap" style="width:78%;font-weight:400" class="insurecard" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div style="font-weight:600">
+              Addon 2</div>
+          </div>
+          <div fxLayout="row wrap" class="insurecard" fxLayoutAlign="space-between stretch" [fxShow]="true">
+            <div style="font-size:12px">
+              SAR</div>
+            <div>
+              4000</div>
+          </div>
+        </div>
+        <div fxLayout="row wrap" style="width:85%;color:black" fxLayoutAlign="space-between stretch" [fxShow]="true">
+          <div fxLayout="row wrap" style="width:78%;font-weight:400" class="insurecard" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div style="font-weight:600">
+              VAT 15%</div>
+          </div>
+          <div fxLayout="row wrap" class="insurecard" fxLayoutAlign="space-between stretch" [fxShow]="true">
+            <div style="font-size:12px">
+              SAR</div>
+            <div>
+              50</div>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="row wrap" style="width:90%;height:60px;background:#218BC4;border-radius:30px;padding:20px" fxLayoutAlign="space-between center" [fxShow]="true">
+        <div fxLayout="column wrap" style="padding:10px" fxLayoutAlign="start start" [fxShow]="true">
+          <div>
+            Total premium (smart)</div>
+          <div style="font-size:15px">
+            SAR <span style="font-weight:600;font-size:25px">1,000</span></div>
+        </div>
+        <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div>
+            Insure now</div>
+        </div>
+      </div>
+    </div>
+    <div fxLayout="row wrap" style="width:100%" fxLayoutAlign="space-between center" [fxShow]="true">
+      <div fxLayout="column wrap" style="position:relative;background:white;border-radius:20px;height:auto;padding-top:20px;margin-top:10px;border: solid 3px #00B1AB;overflow: hidden;" fxFlex="32" fxLayoutAlign="space-around center" [fxShow]="true" fxFlex.lt-md="48">
+        <div>
+          <img imgSrc="/Web/Icons/Comperhensive (1)/Group 33679.png">
+        </div>
+        <div class="vertical_div">
+        </div>
+        <div style="padding-top:10px;color:#00B1AB;font-size:20px;font-weight:600">
+          Wafi Basic</div>
+        <div style="font-size:10px;font-weight:600;">
+          SAR <span style="font-size:20px;color:##144185;font-weight:600"> 950</span> &#xA0;SAR <span style="font-size:20px;color:#00B1AB;font-weight:600"> 950 </span></div>
+        <div class="check_details_hole">
+        </div>
+        <div fxLayout="column wrap" style="width:90%" fxLayoutAlign="space-around center" [fxShow]="true" fxHide.lt-md="true">
+          <div style="font-size:10px">
+            Premium Details</div>
+          <div fxLayout="row wrap" style="width:90%" fxLayoutAlign="space-between center" [fxShow]="true">
+            <div>
+              <img imgSrc="/Web/Icons/Comperhensive (1)/tabby@2x.png" style="padding-top:5px" width="60px">
+            </div>
+            <div>
+              4 interest free payments of SR 174.75 <a style="color:blue">Learn More</a></div>
+            <div>
+            </div>
+          </div>
+          <div style="width:90%;height:40px;border-radius:20px;background:#00B1AB;display:flex;justify-content:center;color:#fff">
+            <button mat-button>Selected</button>
+          </div>
+          <div fxLayout="column wrap" style="width:90%;margin-top:20px;color:#738194" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div fxLayout="row wrap" style="width:100%" class="dash" fxLayoutAlign="space-between center" [fxShow]="true">
+              <div>
+                Third Party Liability up to SAR 10 m</div>
+              <div style="color:#00B1AB">
+                <mat-icon>done</mat-icon>
+              </div>
+            </div>
+            <div fxLayout="row wrap" style="width:100%" class="dash" fxLayoutAlign="space-between center" [fxShow]="true">
+              <div>
+                No Claims Discount benefit</div>
+              <div style="color:#00B1AB">
+                <mat-icon>done</mat-icon>
+              </div>
+            </div>
+            <div fxLayout="row wrap" style="width:100%" class="dash" fxLayoutAlign="space-between center" [fxShow]="true">
+              <div>
+                Loyalty discount benefit</div>
+              <div style="color:#00B1AB">
+                <mat-icon>done</mat-icon>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div fxLayout="row wrap" style="color:#00B1AB;width:100%;height:40px;border-radius:0px 0px 20px 20px; background:#EFF4F7;margin-top:20px" fxLayoutAlign="center center" [fxShow]="true">
+          <div>
+            Cheak details</div>
+        </div>
+      </div>
+      <div fxLayout="column wrap" style="position:relative;background:white;border-radius:20px;height:auto;padding-top:20px;margin-top:10px;overflow: hidden;" fxFlex="32" fxLayoutAlign="space-around center" [fxShow]="true" fxFlex.lt-md="48">
+        <div style="background:orange;font-size:10px;display:flex;justify-content:center;align-items:center;;color:#fff" class="vertical_div">
+          POPULAR</div>
+        <div>
+          <img imgSrc="/Web/Icons/Comperhensive (1)/Group 33594.png">
+        </div>
+        <div style="padding-top:10px;color:#009ADE;font-size:20px;font-weight:600">
+          Smart</div>
+        <div style="font-size:10px;font-weight:600">
+          SAR <span style="font-size:20px;color:##144185;font-weight:600"> 1200</span> &#xA0;SAR <span style="font-size:20px;color:#009ADE;font-weight:600"> 1000 </span></div>
+        <div class="check_details_hole">
+        </div>
+        <div fxLayout="column wrap" style="width:90%" fxLayoutAlign="space-around center" [fxShow]="true" fxHide.lt-md="true">
+          <div style="font-size:10px">
+            Premium Details</div>
+          <div fxLayout="row wrap" style="width:90%" fxLayoutAlign="space-between center" [fxShow]="true">
+            <div>
+              <img imgSrc="/Web/Icons/Comperhensive (1)/tabby@2x.png" style="padding-top:5px" width="60px">
+            </div>
+            <div>
+              4 interest free payments of SR 174.75 <a style="color:blue">Learn More</a></div>
+            <div>
+            </div>
+          </div>
+          <div style="width:90%;height:40px;border-radius:20px;background:#009ADE;display:flex;justify-content:center;color:#fff">
+            <button mat-button>Selected</button>
+          </div>
+          <div fxLayout="column wrap" style="width:90%;margin-top:20px;color:#738194" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div fxLayout="row wrap" style="width:100%" class="dash" fxLayoutAlign="space-between center" [fxShow]="true">
+              <div>
+                Third Party Liability up to SAR 10 m</div>
+              <div style="color:#009ADE">
+                <mat-icon>done</mat-icon>
+              </div>
+            </div>
+            <div fxLayout="row wrap" style="width:100%" class="dash" fxLayoutAlign="space-between center" [fxShow]="true">
+              <div>
+                No Claims Discount benefit</div>
+              <div style="color:#009ADE">
+                <mat-icon>done</mat-icon>
+              </div>
+            </div>
+            <div fxLayout="row wrap" style="width:100%" class="dash" fxLayoutAlign="space-between center" [fxShow]="true">
+              <div>
+                Loyalty discount benefit</div>
+              <div style="color:#009ADE">
+                <mat-icon>done</mat-icon>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div fxLayout="row wrap" style="color:#009ADE;width:100%;height:40px;border-radius:0px 0px 20px 20px; background:#EFF4F7;margin-top:20px" fxLayoutAlign="center center" [fxShow]="true">
+          <div>
+            Cheak details</div>
+        </div>
+      </div>
+      <div fxLayout="column wrap" style="position:relative;background:white;border-radius:20px;height:auto;padding-top:10px;margin-top:10px;overflow: hidden;" fxFlex="32" fxLayoutAlign="space-around center" [fxShow]="true" fxFlex.lt-md="48">
+        <div style="background:#0A9814;font-size:8px;display:flex;justify-content:center;align-items:center;color:#fff" class="vertical_div">
+          Recommended</div>
+        <div>
+          <img imgSrc="/Web/Icons/Comperhensive (1)/Group 33681.png">
+        </div>
+        <div style="padding-top:10px;color:#144185;font-size:20px;font-weight:600">
+          Comprehensive</div>
+        <div style="font-size:10px;font-weight:600">
+          SAR <span style="font-size:20px;color:##144185;font-weight:600"> 1300</span> &#xA0;SAR <span style="font-size:20px;color:#144185;font-weight:600"> 1170 </span></div>
+        <div class="check_details_hole">
+        </div>
+        <div fxLayout="column wrap" style="width:90%" fxLayoutAlign="space-around center" [fxShow]="true" fxHide.lt-md="true">
+          <div style="font-size:10px">
+            Premium Details</div>
+          <div fxLayout="row wrap" style="width:90%" fxLayoutAlign="space-between center" [fxShow]="true">
+            <div>
+              <img imgSrc="/Web/Icons/Comperhensive (1)/tabby@2x.png" style="padding-top:5px" width="60px">
+            </div>
+            <div>
+              4 interest free payments of SR 174.75 <a style="color:blue">Learn More</a></div>
+            <div>
+            </div>
+          </div>
+          <div style="width:90%;height:40px;border-radius:20px;background:#144185;display:flex;justify-content:center;color:#fff">
+            <button mat-button>Selected</button>
+          </div>
+          <div fxLayout="column wrap" style="width:90%;margin-top:20px;color:#738194" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div fxLayout="row wrap" style="width:100%" class="dash" fxLayoutAlign="space-between center" [fxShow]="true">
+              <div>
+                Third Party Liability up to SAR 10 m</div>
+              <div style="color:#144185">
+                <mat-icon>done</mat-icon>
+              </div>
+            </div>
+            <div fxLayout="row wrap" style="width:100%" class="dash" fxLayoutAlign="space-between center" [fxShow]="true">
+              <div>
+                No Claims Discount benefit</div>
+              <div style="color:#144185">
+                <mat-icon>done</mat-icon>
+              </div>
+            </div>
+            <div fxLayout="row wrap" style="width:100%" class="dash" fxLayoutAlign="space-between center" [fxShow]="true">
+              <div>
+                Loyalty discount benefit</div>
+              <div style="color:#144185">
+                <mat-icon>done</mat-icon>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div fxLayout="row wrap" style="color:#144185;width:100%;height:40px;border-radius:0px 0px 20px 20px; background:#EFF4F7;margin-top:20px" fxLayoutAlign="center center" [fxShow]="true">
+          <div>
+            Cheak details</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

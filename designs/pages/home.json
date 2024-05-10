@@ -1,0 +1,122 @@
+[
+    {
+        "id": "sd_wWomRIpOPlKqIc3T",
+        "type": "tab",
+        "createdDate": "2024-05-09T10:23:01.791Z",
+        "label": "home",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "homeComponent"
+    },
+    {
+        "id": "sd_tPQw1ZYUvNkaa0NL",
+        "type": "OnInit",
+        "z": "sd_wWomRIpOPlKqIc3T",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_tPQw1ZYUvNkaa0NL",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_vGm5AyHgi7KgsyyZ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "homeComponent"
+    },
+    {
+        "id": "sd_vGm5AyHgi7KgsyyZ",
+        "type": "PageVariables",
+        "z": "sd_wWomRIpOPlKqIc3T",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_vGm5AyHgi7KgsyyZ",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            [
+                "sd_oExKQDkOnt8mJjGF"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "homeComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_b3zJV0bwyMn1m7dG",
+        "type": "PageStart",
+        "z": "sd_wWomRIpOPlKqIc3T",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "insureUp",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "insureUp",
+        "category": "General",
+        "x": 45,
+        "y": 160,
+        "wires": [
+            [
+                "sd_3uav6M1viC3WLmzu"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "homeComponent"
+    },
+    {
+        "id": "sd_3uav6M1viC3WLmzu",
+        "type": "Script",
+        "z": "sd_wWomRIpOPlKqIc3T",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\n\nif(page.insureModal==false){\n    page.insureModal=true \n}else{\n    page.insureModal=false \n}",
+        "functionName": "sd_3uav6M1viC3WLmzu",
+        "category": "Function",
+        "x": 200,
+        "y": 160,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "homeComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_oExKQDkOnt8mJjGF",
+        "type": "Script",
+        "z": "sd_wWomRIpOPlKqIc3T",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.insureModal=false ",
+        "functionName": "sd_oExKQDkOnt8mJjGF",
+        "category": "Function",
+        "x": 305,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "homeComponent",
+        "generated": true
+    }
+]

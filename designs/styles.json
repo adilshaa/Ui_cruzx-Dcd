@@ -1,0 +1,14 @@
+{
+    "classes": [
+        "primary_color",
+        "primary_bg",
+        "header_container",
+        "container",
+        "insuring",
+        "overlay_black",
+        "insurecard",
+        "check_details_hole",
+        "vertical_div",
+        "dash"
+    ]
+}

@@ -1,0 +1,99 @@
+/*Importing default angular material css theme. */
+
+@import "@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "nDefaults.scss";
+
+:root{
+    --primary-color:#218BC4;
+    --container-width: 90%; 
+    --container-color: #F7F9FA;
+    --white-container: #FFFFFF
+
+}
+
+body{
+ font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.primary_color{
+    color:  var(--primary-color);;
+}
+.primary_bg{
+    background-color: var(--primary-color);
+
+}
+
+.header_container{
+    height:auto;
+    background-color: #FFFFFF;
+    box-shadow: 0px 3px 6px gray;
+}
+.container{
+    width: var(--container-width);
+    margin-bottom: 200px;
+}
+
+.insuring{
+  position: fixed;
+  bottom: 0;
+  border-radius:20px 20px 0px 0px ;
+        left: 0;
+        width: 100%;
+        background-color: var( --white-container);
+        color: white;
+        padding-top: 10px;
+        text-align: center;
+        padding-bottom: 10px;
+        z-index: 1000;
+}
+
+.overlay_black {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+ background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  backdrop-filter: blur(8px); /* Apply blur effect */
+  z-index: 999;
+}
+
+.insurecard{
+    width:22%;
+    font-weight:500;
+    color:#475973;
+    font-size: 15px;
+}
+
+.check_details_hole{
+    position:absolute;
+    background:#ffff;
+    width:20px;
+    height:20px;
+    left:0;
+    top:0;
+    margin:15px;
+    border: solid 2px gray;
+    border-radius:50px
+}
+.vertical_div{
+      position: absolute;
+  background: #ffff;
+  width: 100px;
+  height: 20px;
+  top: 55px;
+  right: -15px;
+  transform-origin: top right;
+  transform: rotate(45deg);
+}
+
+
+.dash{
+    border-bottom-style: dashed;
+border-bottom-width: 2px;
+border-bottom-color: #e6e8e6;
+width:100%;margin:0;
+}
