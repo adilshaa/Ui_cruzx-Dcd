@@ -17,6 +17,10 @@
         "viewType": "common",
         "nodeType": "start",
         "name": "",
+        "inputVariables": [],
+        "localVariables": [],
+        "outputVariables": [],
+        "pageVariables": [],
         "functionName": "sd_tPQw1ZYUvNkaa0NL",
         "category": "Lifecycle Events",
         "x": 30,
@@ -106,7 +110,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "page.insureModal=false \npage.leftModal=false\npage.centerModal=false\npage.modalContent=''",
+        "script": "page.insureModal=false \npage.leftModal=false\npage.centerModal=false\npage.modalContent='basic'",
         "functionName": "sd_oExKQDkOnt8mJjGF",
         "category": "Function",
         "x": 305,
@@ -216,6 +220,59 @@
         "category": "Function",
         "x": 220,
         "y": 260,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "homeComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_HSPqSdfJVauXoM2l",
+        "type": "PageStart",
+        "z": "sd_wWomRIpOPlKqIc3T",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "switchModalCnt",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "content",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "switchModalCnt",
+        "category": "General",
+        "x": 80,
+        "y": 340,
+        "wires": [
+            [
+                "sd_09RIR1M40VmVl2Ce"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "homeComponent"
+    },
+    {
+        "id": "sd_09RIR1M40VmVl2Ce",
+        "type": "Script",
+        "z": "sd_wWomRIpOPlKqIc3T",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.modalContent=bh.input.content",
+        "functionName": "sd_09RIR1M40VmVl2Ce",
+        "category": "Function",
+        "x": 220,
+        "y": 360,
         "wires": [
             []
         ],

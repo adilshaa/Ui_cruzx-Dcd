@@ -15,6 +15,7 @@ body{
  font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
+  margin-bottom: 200PX;
 }
 
 
@@ -33,7 +34,6 @@ body{
 }
 .container{
     width: var(--container-width);
-    margin-bottom: 200px;
 }
 
 .insuring{
@@ -103,7 +103,7 @@ width:100%;margin:0;
   position: fixed;
   right:0px; /* Initially hide the modal off-screen */
   top: 0;
-  width: 400px;
+  width: 500px;
   height: 100%;
   background-color: #ffff;
   box-shadow: 0 0 10px var(--secondary-color);
@@ -130,6 +130,50 @@ width:100%;margin:0;
   animation: slideIn 1s forwards, hitEffect 0.2s forwards, moveBack 0.2s 0.2s forwards;
  
 }
+
+.horizontal-scroller {
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.scroll-card {
+  position: relative;
+  padding-left: 300px;
+  padding-top:180px;
+  margin-right: 10px; /* Adjust margin between cards */
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  border: solid .2px rgba(190, 185, 185, 0.562);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding-right:20px
+}
+
+/* Hide scrollbar for WebKit (Chrome, Safari, etc.) */
+.horizontal-scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.coverage_basic_btn{
+    padding:7px 20px;
+    background:#00AEAA;
+    color:#00AEAA;
+}
+.coverage_smart_btn{
+    padding:7px 20px;
+    background:#19A8D3;
+    color:#19A8D3;
+
+
+}
+.coverage_comp_btn{
+    padding:7px 20px;
+    background:#19A8D3;
+    color:#19A8D3;
+  
+}
+
+
 @keyframes slideIn {
   0% {
     transform: translateX(-100%);

@@ -17,6 +17,18 @@
         "viewType": "common",
         "nodeType": "start",
         "name": "",
+        "inputVariables": [
+            {
+                "key": "id",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                }
+            }
+        ],
+        "localVariables": [],
+        "outputVariables": [],
+        "pageVariables": [],
         "functionName": "sd_4Q5qYjNPpqLwtieb",
         "category": "Lifecycle Events",
         "x": 30,
@@ -40,11 +52,41 @@
         "inputs": 1,
         "outputs": 1,
         "operation": "set",
-        "globalVariables": [],
+        "globalVariables": [
+            {
+                "textIp": "id",
+                "typedIpValue": {
+                    "type": "bh",
+                    "value": "pageInput"
+                }
+            }
+        ],
         "functionName": "sd_UFTTAKBm8QND1tMF",
         "category": "Function",
         "x": 180,
         "y": 30,
+        "wires": [
+            [
+                "sd_l4qKEgiZ3IgxCE4n"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "headerComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_l4qKEgiZ3IgxCE4n",
+        "type": "Script",
+        "z": "sd_epiaka3XE8FJRKdc",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(page.id.id)",
+        "functionName": "sd_l4qKEgiZ3IgxCE4n",
+        "category": "Function",
+        "x": 320,
+        "y": 100,
         "wires": [
             []
         ],

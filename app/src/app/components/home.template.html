@@ -1,8 +1,8 @@
-<bh-header></bh-header>
+<bh-header [id]="page.modalContent"></bh-header>
 <div fxLayout="row wrap" class="overlay_black" fxLayoutAlign="start stretch" [fxShow]="page.insureModal"></div>
-<div fxLayout="column wrap" style=" background-color: #F7F9FA;" fxLayoutAlign="start center" [fxShow]="true">
+<div fxLayout="column wrap" style=" background-color: #F7F9FA;   margin-top: 0;     margin-right: 0;     margin-bottom: 0;     margin-left: 0;" fxLayoutAlign="start center" [fxShow]="true">
   <div fxLayout="column wrap" style="font-weight:500;color:#475973" class="container" fxLayoutAlign="start start" [fxShow]="true">
-    <div fxLayout="row wrap" style="width:100%;margin-top:60px;" fxLayoutAlign="start center" [fxShow]="true" fxHide.gt-md="true">
+    <div fxLayout="row wrap" style="width:100%;padding-top:60px;" fxLayoutAlign="start center" [fxShow]="true" fxHide.gt-md="true">
       <div fxFlex.lf-md="20" style="width:50px;height:50px;border-radius:100px;color:#fff;display:flex;justify-content:center;align-items:center" class="primary_bg">
         1 of 2</div>
       <div fxLayout="column wrap" style="margin-left:20px" fxLayoutAlign="start stretch" [fxShow]="true" fxFlex.lt-md="80">
@@ -156,7 +156,7 @@
       </div>
     </div>
     <div fxLayout="row wrap" style="width:100%" fxLayoutAlign="space-between center" [fxShow]="true">
-      <div fxLayout="column wrap" style="position:relative;background:white;border-radius:20px;height:auto;padding-top:20px;margin-top:10px;border: solid 3px #00B1AB;overflow: hidden;" fxFlex="32" fxLayoutAlign="space-around center" [fxShow]="true" fxFlex.lt-md="48">
+      <div fxLayout="column wrap" style="position:relative;background:white;border-radius:20px;height:auto;padding-top:20px;margin-top:10px;border: solid 3px #00B1AB;overflow: hidden;" fxFlex="32" fxLayoutAlign="space-around center" [fxShow]="true" fxFlex.lt-md="48" [style.border]="page.modalContent==&apos;basic&apos;?&apos;solid 3px #00B1AB&apos;:&apos;none&apos;">
         <div>
           <img imgSrc="/Web/Icons/Comperhensive (1)/Group 33679.png">
         </div>
@@ -212,7 +212,7 @@
             Cheak details</div>
         </div>
       </div>
-      <div fxLayout="column wrap" style="position:relative;background:white;border-radius:20px;height:auto;padding-top:20px;margin-top:10px;overflow: hidden;" fxFlex="32" fxLayoutAlign="space-around center" [fxShow]="true" fxFlex.lt-md="48">
+      <div fxLayout="column wrap" style="position:relative;background:white;border-radius:20px;height:auto;padding-top:20px;margin-top:10px;overflow: hidden;" fxFlex="32" fxLayoutAlign="space-around center" [fxShow]="true" fxFlex.lt-md="48" [style.border]="page.modalContent==&apos;smart&apos;?&apos;solid 3px #009ADE&apos;:&apos;none&apos;">
         <div style="background:orange;font-size:10px;display:flex;justify-content:center;align-items:center;;color:#fff" class="vertical_div">
           POPULAR</div>
         <div>
@@ -264,11 +264,11 @@
           </div>
         </div>
         <div fxLayout="row wrap" style="color:#009ADE;width:100%;height:40px;border-radius:0px 0px 20px 20px; background:#EFF4F7;margin-top:20px" fxLayoutAlign="center center" [fxShow]="true">
-          <div>
+          <div (click)="modalController(&apos;left&apos;,&apos;smart&apos;)">
             Cheak details</div>
         </div>
       </div>
-      <div fxLayout="column wrap" style="position:relative;background:white;border-radius:20px;height:auto;padding-top:10px;margin-top:10px;overflow: hidden;" fxFlex="32" fxLayoutAlign="space-around center" [fxShow]="true" fxFlex.lt-md="48">
+      <div fxLayout="column wrap" style="position:relative;background:white;border-radius:20px;height:auto;padding-top:10px;margin-top:10px;overflow: hidden;" fxFlex="32" fxLayoutAlign="space-around center" [fxShow]="true" fxFlex.lt-md="48" [style.border]="page.modalContent==&apos;comp&apos;?&apos;solid 3px #218BC4&apos;:&apos;none&apos;">
         <div style="background:#0A9814;font-size:8px;display:flex;justify-content:center;align-items:center;color:#fff" class="vertical_div">
           Recommended</div>
         <div>
@@ -292,7 +292,7 @@
             <div>
             </div>
           </div>
-          <div style="width:90%;height:40px;border-radius:20px;background:#144185;display:flex;justify-content:center;color:#fff">
+          <div (click)="(click)" style="width:90%;height:40px;border-radius:20px;background:#144185;display:flex;justify-content:center;color:#fff">
             <button mat-button>Selected</button>
           </div>
           <div fxLayout="column wrap" style="width:90%;margin-top:20px;color:#738194" fxLayoutAlign="start stretch" [fxShow]="true">
@@ -320,8 +320,81 @@
           </div>
         </div>
         <div fxLayout="row wrap" style="color:#144185;width:100%;height:40px;border-radius:0px 0px 20px 20px; background:#EFF4F7;margin-top:20px" fxLayoutAlign="center center" [fxShow]="true">
-          <div>
+          <div (click)="modalController(&apos;left&apos;,&apos;comp&apos;)">
             Cheak details</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div fxLayout="column " style=" background-color: #FFFFF;" fxLayoutAlign="start center" [fxShow]="true">
+  <div fxLayout="column " style="padding-top:20px;margin-bottom:200px" class="container" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div style="color:#218BC4;font-size:20px;font-weight:600">
+      Select Addons</div>
+    <p style="color:#475973;font-weight:500">
+      Please select one of our plans by selecting the premium card</p>
+    <div style="color:#475973;font-weight:500">
+      <span style="font-size:23px;color:#228BC4;font-weight:600">0</span> Addons Selected
+    </div>
+    <div fxLayout="row " class="horizontal-scroller" fxLayoutGap="10" fxLayoutAlign="start start" [fxShow]="true">
+      <div fxLayout="column wrap" class="scroll-card" fxLayoutAlign="start center" [fxShow]="true">
+        <div fxLayout="row wrap" style="position: absolute;left:5%;top:15%;width:90%" fxLayoutAlign="space-between stretch" [fxShow]="true">
+          <div>
+            <img imgSrc="/Web/Icons/Comperhensive (1)/Group 104623@2x.png" width="50%">
+          </div>
+          <div>
+            SAR <span style="font-size:24px;color:#218BC4;font-weight:600"> 100</span></div>
+        </div>
+        <div fxLayout="row wrap" style="position: absolute;bottom:15%;left:5%;width:90%" fxLayoutAlign="space-between space-around" [fxShow]="true">
+          <div style="color:#475973;font-weight:600">
+            Natural Perils <br> <span style="color:#228BC4"> <a>Check details</a> </span></div>
+          <div fxLayout="row wrap" style="color:#228BC4;padding-left:40px" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div>
+              <mat-icon>add_circle_outline</mat-icon>
+            </div>
+            <div>
+              Add</div>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="column wrap" class="scroll-card" fxLayoutAlign="start center" [fxShow]="true">
+        <div fxLayout="row wrap" style="position: absolute;left:5%;top:15%;width:90%" fxLayoutAlign="space-between stretch" [fxShow]="true">
+          <div>
+            <img imgSrc="/Web/Icons/Comperhensive (1)/Group 33679@2x.png" width="50%">
+          </div>
+          <div>
+            SAR <span style="font-size:24px;color:#218BC4;font-weight:600"> 100</span></div>
+        </div>
+        <div fxLayout="row wrap" style="position: absolute;bottom:15%;left:5%;width:90%" fxLayoutAlign="space-between space-around" [fxShow]="true">
+          <div style="color:#475973;font-weight:600">
+            Handbag Covering <br> <span style="color:#228BC4"> <a>Check details</a> </span></div>
+          <div fxLayout="row wrap" style="color:#228BC4;padding-left:40px" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div>
+              <mat-icon>add_circle_outline</mat-icon>
+            </div>
+            <div>
+              Add</div>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="column wrap" class="scroll-card" fxLayoutAlign="start center" [fxShow]="true">
+        <div fxLayout="row wrap" style="position: absolute;left:5%;top:15%;width:90%" fxLayoutAlign="space-between stretch" [fxShow]="true">
+          <div>
+            <img imgSrc="/Web/Icons/Comperhensive (1)/bump@2x.png" width="50%">
+          </div>
+          <div>
+            SAR <span style="font-size:24px;color:#218BC4;font-weight:600"> 100</span></div>
+        </div>
+        <div fxLayout="row wrap" style="position: absolute;bottom:15%;left:5%;width:90%" fxLayoutAlign="space-between space-around" [fxShow]="true">
+          <div style="color:#475973;font-weight:600">
+            GCC Countries <br> <span style="color:#228BC4"> <a>Check details</a> </span></div>
+          <div fxLayout="row wrap" style="color:#228BC4;padding-left:40px" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div>
+              <mat-icon>add_circle_outline</mat-icon>
+            </div>
+            <div>
+              Add</div>
+          </div>
         </div>
       </div>
     </div>
@@ -391,10 +464,10 @@
         Multi vehicle discount benefit</div>
     </div>
   </div>
-  <div fxLayout="column wrap" style="width:90%" class="left_hit_ani" fxLayoutAlign="center center" [fxShow]="page.modalContent==&apos;start&apos;">
+  <div fxLayout="column wrap" style="width:100%" class="left_hit_ani" fxLayoutAlign="center center" [fxShow]="page.modalContent==&apos;smart&apos;">
     <div fxLayout="column wrap" style="width:90%;margin-top:30px" fxLayoutAlign="start stretch" [fxShow]="true">
-      <div style="font-size:25px;color:#00B1AB;font-weight:600">
-        Wafi Basic</div>
+      <div style="font-size:25px;color:#19A8D3;font-weight:600">
+        Wafi Smart</div>
     </div>
     <div fxLayout="row wrap" style="width:90%;height:35px;background:#EFF4F7;margin-top:10px;border-radius:15px;padding:5px" fxLayoutAlign="space-between center" [fxShow]="true">
       <div>
@@ -451,7 +524,7 @@
         Multi vehicle discount benefit</div>
     </div>
   </div>
-  <div fxLayout="column wrap" style="position:fixed;bottom:0;width:400px;background:#EFF4F7;padding:20px" fxLayoutAlign="space-around center" [fxShow]="true">
+  <div fxLayout="column wrap" style="position:fixed;bottom:0;width:500px;background:#EFF4F7;padding:30px" fxLayoutAlign="space-around center">
     <div fxLayout="column wrap" style="width:100%" fxLayoutAlign="start stretch" [fxShow]="true">
       <div fxLayout="row wrap" style="color:#475973;width:100%" fxLayoutAlign="space-between stretch" [fxShow]="true">
         <div style="font-weight:600;font-size:18px;">
@@ -464,21 +537,21 @@
         Excluded Benefits included on Wafi Smart &amp; Wafi Comprehansive</div>
       <div fxLayout="row wrap" style="width:100%" fxLayoutAlign="space-between stretch" [fxShow]="true">
         <div>
-          <button mat-button (click)="modalController(&apos;left&apos;,&apos;basic&apos;)">Wafi Basic</button>
+          <button mat-button style="    border-radius:50px;     border:solid 2px #00AEAA;" class="coverage_basic_btn" [style.background]="page.modalContent==&apos;basic&apos;?&apos;#00AEAA&apos;:&apos;#fff&apos;" [style.color]="page.modalContent==&apos;basic&apos;?&apos;#fff&apos;:&apos;#00AEAA&apos;" (click)="switchModalCnt(&apos;basic&apos;)">Wafi Basic</button>
         </div>
         <div>
-          <button mat-button (click)="modalController(left,smart)">Wafi smart</button>
+          <button mat-button style="    border-radius:50px;     border:solid 2px #19A8D3;" class="coverage_smart_btn" [style.background]="page.modalContent==&apos;smart&apos;?&apos;#19A8D3&apos;:&apos;#fff&apos;" [style.color]="page.modalContent==&apos;smart&apos;?&apos;#fff&apos;:&apos;#19A8D3&apos;" (click)="switchModalCnt(&apos;smart&apos;)">Wafi smart</button>
         </div>
         <div>
-          <button mat-button>Button</button>
+          <button mat-button style="  border-radius:50px;   border:solid 2px#19A8D3;" class="coverage_comp_btn" [style.background]="page.modalContent==&apos;comp&apos;?&apos;#218BC4&apos;:&apos;#fff&apos;" [style.color]="page.modalContent==&apos;comp&apos;?&apos;#fff&apos;:&apos;#19A8D3&apos;" (click)="switchModalCnt(&apos;comp&apos;)">Wafi Comprehensive</button>
         </div>
       </div>
     </div>
   </div>
-  <div fxLayout="column wrap" style="width:90%" class="left_hit_ani" fxLayoutAlign="center center" [fxShow]="false">
+  <div fxLayout="column wrap" style="width:90%" class="left_hit_ani" fxLayoutAlign="center center" [fxShow]="page.modalContent==&apos;comp&apos;">
     <div fxLayout="column wrap" style="width:90%;margin-top:30px" fxLayoutAlign="start stretch" [fxShow]="true">
-      <div style="font-size:25px;color:#00B1AB;font-weight:600">
-        Wafi Basic</div>
+      <div style="font-size:25px;color:#144185;font-weight:600">
+        Wafi Comprehensive</div>
     </div>
     <div fxLayout="row wrap" style="width:90%;height:35px;background:#EFF4F7;margin-top:10px;border-radius:15px;padding:5px" fxLayoutAlign="space-between center" [fxShow]="true">
       <div>
@@ -487,7 +560,7 @@
         <mat-icon style="font-size:15px;padding-top:10px;padding-left:5px">expand_more</mat-icon>
       </div>
     </div>
-    <div fxLayout="column wrap" style="width:90%;background:#E4F9F9;margin-top:10px;border-radius:15px;padding: 15px ;" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="column wrap" style="width:90%;background:#E6F0FF;margin-top:10px;border-radius:15px;padding: 15px ;" fxLayoutAlign="start stretch" [fxShow]="true">
       <div style="font-size: 14px;font-weight:600;color:#475973">
         Benefits list</div>
       <div style="font-size: 14px;font-weight:400;color:#516684;padding-top:5px">

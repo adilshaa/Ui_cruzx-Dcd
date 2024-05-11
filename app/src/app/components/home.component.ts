@@ -99,6 +99,21 @@ export class homeComponent {
       return this.errorHandler(bh, e, 'sd_cxtZhBAMOlkHKroZ');
     }
   }
+
+  switchModalCnt(content: any = undefined, ...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = { content };
+      bh.local = {};
+      bh = this.sd_09RIR1M40VmVl2Ce(bh);
+      //appendnew_next_switchModalCnt
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_HSPqSdfJVauXoM2l');
+    }
+  }
   //appendnew_flow_homeComponent_start
 
   sd_vGm5AyHgi7KgsyyZ(bh) {
@@ -117,7 +132,7 @@ export class homeComponent {
       page.insureModal = false;
       page.leftModal = false;
       page.centerModal = false;
-      page.modalContent = '';
+      page.modalContent = 'basic';
       //appendnew_next_sd_oExKQDkOnt8mJjGF
       return bh;
     } catch (e) {
@@ -178,6 +193,17 @@ export class homeComponent {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_pi4OYqzmmUDlzvI0');
+    }
+  }
+
+  sd_09RIR1M40VmVl2Ce(bh) {
+    try {
+      const page = this.page;
+      page.modalContent = bh.input.content;
+      //appendnew_next_sd_09RIR1M40VmVl2Ce
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_09RIR1M40VmVl2Ce');
     }
   }
 

@@ -12,6 +12,11 @@
         "dash",
         "left_modal",
         "center_modal",
-        "left_hit_ani"
+        "left_hit_ani",
+        "horizontal-scroller",
+        "scroll-card",
+        "coverage_basic_btn",
+        "coverage_smart_btn",
+        "coverage_comp_btn"
     ]
 }
