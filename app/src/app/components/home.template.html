@@ -1,5 +1,5 @@
 <bh-header [id]="page.modalContent"></bh-header>
-<div fxLayout="row wrap" class="overlay_black" fxLayoutAlign="start stretch" [fxShow]="page.insureModal"></div>
+<div fxLayout="row wrap" class="overlay_black" fxLayoutAlign="start stretch" [fxShow]="page.overlay" (click)="modalController(&apos;left&apos;,page.modalContent)"></div>
 <div fxLayout="column wrap" style=" background-color: #F7F9FA;   margin-top: 0;     margin-right: 0;     margin-bottom: 0;     margin-left: 0;" fxLayoutAlign="start center" [fxShow]="true">
   <div fxLayout="column wrap" style="font-weight:500;color:#475973" class="container" fxLayoutAlign="start start" [fxShow]="true">
     <div fxLayout="row wrap" style="width:100%;padding-top:60px;" fxLayoutAlign="start center" [fxShow]="true" fxHide.gt-md="true">
@@ -156,172 +156,182 @@
       </div>
     </div>
     <div fxLayout="row wrap" style="width:100%" fxLayoutAlign="space-between center" [fxShow]="true">
-      <div fxLayout="column wrap" style="position:relative;background:white;border-radius:20px;height:auto;padding-top:20px;margin-top:10px;border: solid 3px #00B1AB;overflow: hidden;" fxFlex="32" fxLayoutAlign="space-around center" [fxShow]="true" fxFlex.lt-md="48" [style.border]="page.modalContent==&apos;basic&apos;?&apos;solid 3px #00B1AB&apos;:&apos;none&apos;">
-        <div>
-          <img imgSrc="/Web/Icons/Comperhensive (1)/Group 33679.png">
-        </div>
-        <div class="vertical_div">
-        </div>
-        <div style="padding-top:10px;color:#00B1AB;font-size:20px;font-weight:600">
-          Wafi Basic</div>
-        <div style="font-size:10px;font-weight:600;">
-          SAR <span style="font-size:20px;color:##144185;font-weight:600"> 950</span> &#xA0;SAR <span style="font-size:20px;color:#00B1AB;font-weight:600"> 950 </span></div>
-        <div class="check_details_hole">
-        </div>
-        <div fxLayout="column wrap" style="width:90%" fxLayoutAlign="space-around center" [fxShow]="true" fxHide.lt-md="true">
-          <div style="font-size:10px">
-            Premium Details</div>
-          <div fxLayout="row wrap" style="width:90%" fxLayoutAlign="space-between center" [fxShow]="true">
-            <div>
-              <img imgSrc="/Web/Icons/Comperhensive (1)/tabby@2x.png" style="padding-top:5px" width="60px">
-            </div>
-            <div style="font-size:12px">
-              4 interest free payments of SR 174.75 <a style="color:blue">Learn More</a></div>
-            <div>
-            </div>
+      <div fxLayout="column wrap" fxFlex="32" fxLayoutAlign="start stretch" [fxShow]="true" fxFlex.lt-md="48">
+        <div fxLayout="column wrap" style="position:relative;background:white;border-radius:20px;height:auto;padding-top:20px;margin-top:10px;border: solid 3px #00B1AB;overflow: hidden;" fxLayoutAlign="space-between center" [fxShow]="true" fxFlex.lt-md="48" [style.border]="page.modalContent==&apos;basic&apos;?&apos;solid 3px #00B1AB&apos;:&apos;none&apos;">
+          <div>
+            <img imgSrc="/Web/Icons/Comperhensive (1)/Group 33679.png">
           </div>
-          <div style="width:90%;height:40px;border-radius:20px;background:#00B1AB;display:flex;justify-content:center;color:#fff">
-            <button mat-button>Selected</button>
+          <div class="vertical_div">
           </div>
-          <div fxLayout="column wrap" style="width:90%;margin-top:20px;color:#738194" fxLayoutAlign="start stretch" [fxShow]="true">
-            <div fxLayout="row wrap" style="width:100%" class="dash" fxLayoutAlign="space-between center" [fxShow]="true">
+          <div style="padding-top:10px;color:#00B1AB;font-size:20px;font-weight:600">
+            Wafi Basic</div>
+          <div style="font-size:10px;font-weight:600;">
+            SAR <span style="font-size:24px;color:##144185;font-weight:600"> 950</span> &#xA0;SAR <span style="font-size:24px;color:#00B1AB;font-weight:600"> 950 </span></div>
+          <div class="check_details_hole">
+          </div>
+          <div fxLayout="column wrap" style="width:90%" fxLayoutAlign="space-around center" [fxShow]="true" fxHide.lt-md="true">
+            <div style="font-size:10px">
+              Premium Details</div>
+            <div fxLayout="row wrap" style="width:90%" fxLayoutAlign="space-between center" [fxShow]="true">
               <div>
-                Third Party Liability up to SAR 10 m</div>
-              <div style="color:#00B1AB">
-                <mat-icon>done</mat-icon>
+                <img imgSrc="/Web/Icons/Comperhensive (1)/tabby@2x.png" style="padding-top:5px" width="60px">
+              </div>
+              <div style="font-size:12px">
+                4 interest free payments of SR 174.75 <a style="color:blue">Learn More</a></div>
+              <div>
               </div>
             </div>
-            <div fxLayout="row wrap" style="width:100%" class="dash" fxLayoutAlign="space-between center" [fxShow]="true">
-              <div>
-                No Claims Discount benefit</div>
-              <div style="color:#00B1AB">
-                <mat-icon>done</mat-icon>
-              </div>
+            <div style="width:90%;height:40px;border-radius:20px;background:#00B1AB;display:flex;justify-content:center;color:#fff">
+              <button mat-button>Selected</button>
             </div>
-            <div fxLayout="row wrap" style="width:100%" class="dash" fxLayoutAlign="space-between center" [fxShow]="true">
-              <div>
-                Loyalty discount benefit</div>
-              <div style="color:#00B1AB">
-                <mat-icon>done</mat-icon>
+            <div fxLayout="column wrap" style="width:90%;margin-top:20px;color:#738194" fxLayoutAlign="start stretch" [fxShow]="true">
+              <div fxLayout="row wrap" style="width:100%" class="dash" fxLayoutAlign="space-between center" [fxShow]="true">
+                <div>
+                  Third Party Liability up to SAR 10 m</div>
+                <div style="color:#00B1AB">
+                  <mat-icon>done</mat-icon>
+                </div>
+              </div>
+              <div fxLayout="row wrap" style="width:100%" class="dash" fxLayoutAlign="space-between center" [fxShow]="true">
+                <div>
+                  No Claims Discount benefit</div>
+                <div style="color:#00B1AB">
+                  <mat-icon>done</mat-icon>
+                </div>
+              </div>
+              <div fxLayout="row wrap" style="width:100%" class="dash" fxLayoutAlign="space-between center" [fxShow]="true">
+                <div>
+                  Loyalty discount benefit</div>
+                <div style="color:#00B1AB">
+                  <mat-icon>done</mat-icon>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div fxLayout="row wrap" style="color:#00B1AB;width:100%;height:40px;border-radius:0px 0px 20px 20px; background:#EFF4F7;margin-top:20px" fxLayoutAlign="center center" [fxShow]="true">
-          <div (click)="modalController(&apos;left&apos;,&apos;basic&apos;)">
-            Cheak details</div>
+          <div fxLayout="row wrap" style="color:#00B1AB;width:100%;height:40px;border-radius:0px 0px 20px 20px; background:#EFF4F7;margin-top:20px" fxLayoutAlign="center center" [fxShow]="true">
+            <div (click)="modalController(&apos;left&apos;,&apos;basic&apos;)">
+              Cheak details</div>
+          </div>
         </div>
       </div>
-      <div fxLayout="column wrap" style="position:relative;background:white;border-radius:20px;height:auto;padding-top:20px;margin-top:10px;overflow: hidden;" fxFlex="32" fxLayoutAlign="space-around center" [fxShow]="true" fxFlex.lt-md="48" [style.border]="page.modalContent==&apos;smart&apos;?&apos;solid 3px #009ADE&apos;:&apos;none&apos;">
-        <div style="background:orange;font-size:10px;display:flex;justify-content:center;align-items:center;;color:#fff" class="vertical_div">
+      <div fxLayout="column wrap" style="position:relative;background:#F7F9FA;height:auto;" fxFlex="32" fxLayoutAlign="start stretch" [fxShow]="true" fxFlex.lt-md="48">
+        <div fxHide.lt-md="true" fxHide.md="true" style="background:orange;font-size:10px;display:flex;justify-content:center;align-items:center;color:#fff;z-index:10" class="horizontal_div">
           POPULAR</div>
-        <div>
-          <img imgSrc="/Web/Icons/Comperhensive (1)/Group 33594.png">
-        </div>
-        <div style="padding-top:10px;color:#009ADE;font-size:20px;font-weight:600">
-          Smart</div>
-        <div style="font-size:10px;font-weight:600">
-          SAR <span style="font-size:20px;color:##144185;font-weight:600"> 1200</span> &#xA0;SAR <span style="font-size:20px;color:#009ADE;font-weight:600"> 1000 </span></div>
-        <div class="check_details_hole">
-        </div>
-        <div fxLayout="column wrap" style="width:90%" fxLayoutAlign="space-around center" [fxShow]="true" fxHide.lt-md="true">
-          <div style="font-size:10px">
-            Premium Details</div>
-          <div fxLayout="row wrap" style="width:90%" fxLayoutAlign="space-between center" [fxShow]="true">
-            <div>
-              <img imgSrc="/Web/Icons/Comperhensive (1)/tabby@2x.png" style="padding-top:5px" width="60px">
-            </div>
-            <div style="font-size:12px">
-              4 interest free payments of SR 174.75 <a style="color:blue">Learn More</a></div>
-            <div>
-            </div>
+        <div fxLayout="column wrap" style="position:relative;background:white;border-radius:20px;height:auto;padding-top:10px;margin-top:10px;overflow: hidden;" fxLayoutAlign="space-between center" [fxShow]="true" [style.border]="page.modalContent==&apos;smart&apos;?&apos;solid 3px #009ADE&apos;:&apos;none&apos;">
+          <div fxHide.gt-md="true" style="background:orange;font-size:10px;display:flex;justify-content:center;align-items:center;color:#fff" class="vertical_div">
+            POPULAR</div>
+          <div style="padding-top:20px">
+            <img imgSrc="/Web/Icons/Comperhensive (1)/Group 33594.png">
           </div>
-          <div style="width:90%;height:40px;border-radius:20px;background:#009ADE;display:flex;justify-content:center;color:#fff">
-            <button mat-button>Selected</button>
+          <div style="color:#009ADE;font-size:20px;font-weight:600">
+            Smart</div>
+          <div style="font-size:10px;font-weight:600;">
+            SAR <span style="font-size:24px;color:##144185;font-weight:600"> 1200</span> &#xA0;SAR <span style="font-size:24px;color:#009ADE;font-weight:600"> 1000 </span></div>
+          <div class="check_details_hole">
           </div>
-          <div fxLayout="column wrap" style="width:90%;margin-top:20px;color:#738194" fxLayoutAlign="start stretch" [fxShow]="true">
-            <div fxLayout="row wrap" style="width:100%" class="dash" fxLayoutAlign="space-between center" [fxShow]="true">
+          <div fxLayout="column wrap" style="width:90%" fxLayoutAlign="space-around center" [fxShow]="true" fxHide.lt-md="true">
+            <div style="font-size:10px">
+              Premium Details</div>
+            <div fxLayout="row wrap" style="width:90%" fxLayoutAlign="space-between center" [fxShow]="true">
               <div>
-                Third Party Liability up to SAR 10 m</div>
-              <div style="color:#009ADE">
-                <mat-icon>done</mat-icon>
+                <img imgSrc="/Web/Icons/Comperhensive (1)/tabby@2x.png" style="padding-top:5px" width="60px">
+              </div>
+              <div style="font-size:12px">
+                4 interest free payments of SR 174.75 <a style="color:blue">Learn More</a></div>
+              <div>
               </div>
             </div>
-            <div fxLayout="row wrap" style="width:100%" class="dash" fxLayoutAlign="space-between center" [fxShow]="true">
-              <div>
-                No Claims Discount benefit</div>
-              <div style="color:#009ADE">
-                <mat-icon>done</mat-icon>
-              </div>
+            <div style="width:90%;height:40px;border-radius:20px;background:#009ADE;display:flex;justify-content:center;color:#fff">
+              <button mat-button>Selected</button>
             </div>
-            <div fxLayout="row wrap" style="width:100%" class="dash" fxLayoutAlign="space-between center" [fxShow]="true">
-              <div>
-                Loyalty discount benefit</div>
-              <div style="color:#009ADE">
-                <mat-icon>done</mat-icon>
+            <div fxLayout="column wrap" style="width:90%;margin-top:20px;color:#738194" fxLayoutAlign="start stretch" [fxShow]="true">
+              <div fxLayout="row wrap" style="width:100%" class="dash" fxLayoutAlign="space-between center" [fxShow]="true">
+                <div>
+                  Third Party Liability up to SAR 10 m</div>
+                <div style="color:#009ADE">
+                  <mat-icon>done</mat-icon>
+                </div>
+              </div>
+              <div fxLayout="row wrap" style="width:100%" class="dash" fxLayoutAlign="space-between center" [fxShow]="true">
+                <div>
+                  No Claims Discount benefit</div>
+                <div style="color:#009ADE">
+                  <mat-icon>done</mat-icon>
+                </div>
+              </div>
+              <div fxLayout="row wrap" style="width:100%" class="dash" fxLayoutAlign="space-between center" [fxShow]="true">
+                <div>
+                  Loyalty discount benefit</div>
+                <div style="color:#009ADE">
+                  <mat-icon>done</mat-icon>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div fxLayout="row wrap" style="color:#009ADE;width:100%;height:40px;border-radius:0px 0px 20px 20px; background:#EFF4F7;margin-top:20px" fxLayoutAlign="center center" [fxShow]="true">
-          <div (click)="modalController(&apos;left&apos;,&apos;smart&apos;)">
-            Cheak details</div>
+          <div fxLayout="row wrap" style="color:#009ADE;width:100%;height:40px;border-radius:0px 0px 20px 20px; background:#EFF4F7;margin-top:20px" fxLayoutAlign="center center" [fxShow]="true">
+            <div (click)="modalController(&apos;left&apos;,&apos;smart&apos;)">
+              Cheak details</div>
+          </div>
         </div>
       </div>
-      <div fxLayout="column wrap" style="position:relative;background:white;border-radius:20px;height:auto;padding-top:10px;margin-top:10px;overflow: hidden;" fxFlex="32" fxLayoutAlign="space-around center" [fxShow]="true" fxFlex.lt-md="48" [style.border]="page.modalContent==&apos;comp&apos;?&apos;solid 3px #218BC4&apos;:&apos;none&apos;">
-        <div style="background:#0A9814;font-size:8px;display:flex;justify-content:center;align-items:center;color:#fff" class="vertical_div">
+      <div fxLayout="column wrap" style="position:relative;background:#F7F9FA;height:auto;" fxFlex="32" fxLayoutAlign="start stretch" [fxShow]="true" fxFlex.lt-md="48">
+        <div fxHide.lt-md="true" fxHide.md="true" style="background:#0A9814;z-index:10;font-size:8px;display:flex;justify-content:center;align-items:center;color:#fff" class="horizontal_div">
           Recommended</div>
-        <div>
-          <img imgSrc="/Web/Icons/Comperhensive (1)/Group 33681.png">
-        </div>
-        <div style="padding-top:10px;color:#144185;font-size:20px;font-weight:600">
-          Comprehensive</div>
-        <div style="font-size:10px;font-weight:600">
-          SAR <span style="font-size:20px;color:##144185;font-weight:600"> 1300</span> &#xA0;SAR <span style="font-size:20px;color:#144185;font-weight:600"> 1170 </span></div>
-        <div class="check_details_hole">
-        </div>
-        <div fxLayout="column wrap" style="width:90%" fxLayoutAlign="space-around center" [fxShow]="true" fxHide.lt-md="true">
-          <div style="font-size:10px">
-            Premium Details</div>
-          <div fxLayout="row wrap" style="width:90%" fxLayoutAlign="space-between center" [fxShow]="true">
-            <div>
-              <img imgSrc="/Web/Icons/Comperhensive (1)/tabby@2x.png" style="padding-top:5px" width="60px">
-            </div>
-            <div style="font-size:12px">
-              4 interest free payments of SR 174.75 <a style="color:blue">Learn More</a></div>
-            <div>
-            </div>
+        <div fxLayout="column wrap" style="position:relative;background:white;border-radius:20px;height:auto;padding-top:10px;margin-top:10px;overflow: hidden;" fxFlex="32" fxLayoutAlign="space-between center" [fxShow]="true" fxFlex.lt-md="48" [style.border]="page.modalContent==&apos;comp&apos;?&apos;solid 3px #218BC4&apos;:&apos;none&apos;">
+          <div fxHide.gt-md="true" style="background:#0A9814;font-size:8px;display:flex;justify-content:center;align-items:center;color:#fff" class="vertical_div">
+            Recommended</div>
+          <div style="padding-top:20px">
+            <img imgSrc="/Web/Icons/Comperhensive (1)/Group 33681.png">
           </div>
-          <div (click)="(click)" style="width:90%;height:40px;border-radius:20px;background:#144185;display:flex;justify-content:center;color:#fff">
-            <button mat-button>Selected</button>
+          <div style="color:#144185;font-size:20px;font-weight:600">
+            Comprehensive</div>
+          <div style="font-size:10px;font-weight:600">
+            SAR <span style="font-size:24px;color:##144185;font-weight:600"> 1300</span> &#xA0;SAR <span style="font-size:24px;color:#144185;font-weight:600"> 1170 </span></div>
+          <div class="check_details_hole">
           </div>
-          <div fxLayout="column wrap" style="width:90%;margin-top:20px;color:#738194" fxLayoutAlign="start stretch" [fxShow]="true">
-            <div fxLayout="row wrap" style="width:100%" class="dash" fxLayoutAlign="space-between center" [fxShow]="true">
+          <div fxLayout="column wrap" style="width:90%" fxLayoutAlign="space-around center" [fxShow]="true" fxHide.lt-md="true">
+            <div style="font-size:10px">
+              Premium Details</div>
+            <div fxLayout="row wrap" style="width:90%" fxLayoutAlign="space-between center" [fxShow]="true">
               <div>
-                Third Party Liability up to SAR 10 m</div>
-              <div style="color:#144185">
-                <mat-icon>done</mat-icon>
+                <img imgSrc="/Web/Icons/Comperhensive (1)/tabby@2x.png" style="padding-top:5px" width="60px">
+              </div>
+              <div style="font-size:12px">
+                4 interest free payments of SR 174.75 <a style="color:blue">Learn More</a></div>
+              <div>
               </div>
             </div>
-            <div fxLayout="row wrap" style="width:100%" class="dash" fxLayoutAlign="space-between center" [fxShow]="true">
-              <div>
-                No Claims Discount benefit</div>
-              <div style="color:#144185">
-                <mat-icon>done</mat-icon>
-              </div>
+            <div (click)="(click)" style="width:90%;height:40px;border-radius:20px;background:#144185;display:flex;justify-content:center;color:#fff">
+              <button mat-button>Selected</button>
             </div>
-            <div fxLayout="row wrap" style="width:100%" class="dash" fxLayoutAlign="space-between center" [fxShow]="true">
-              <div>
-                Loyalty discount benefit</div>
-              <div style="color:#144185">
-                <mat-icon>done</mat-icon>
+            <div fxLayout="column wrap" style="width:90%;margin-top:20px;color:#738194" fxLayoutAlign="start stretch" [fxShow]="true">
+              <div fxLayout="row wrap" style="width:100%" class="dash" fxLayoutAlign="space-between center" [fxShow]="true">
+                <div>
+                  Third Party Liability up to SAR 10 m</div>
+                <div style="color:#144185">
+                  <mat-icon>done</mat-icon>
+                </div>
+              </div>
+              <div fxLayout="row wrap" style="width:100%" class="dash" fxLayoutAlign="space-between center" [fxShow]="true">
+                <div>
+                  No Claims Discount benefit</div>
+                <div style="color:#144185">
+                  <mat-icon>done</mat-icon>
+                </div>
+              </div>
+              <div fxLayout="row wrap" style="width:100%" class="dash" fxLayoutAlign="space-between center" [fxShow]="true">
+                <div>
+                  Loyalty discount benefit</div>
+                <div style="color:#144185">
+                  <mat-icon>done</mat-icon>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div fxLayout="row wrap" style="color:#144185;width:100%;height:40px;border-radius:0px 0px 20px 20px; background:#EFF4F7;margin-top:20px" fxLayoutAlign="center center" [fxShow]="true">
-          <div (click)="modalController(&apos;left&apos;,&apos;comp&apos;)">
-            Cheak details</div>
+          <div fxLayout="row wrap" style="color:#144185;width:100%;height:40px;border-radius:0px 0px 20px 20px; background:#EFF4F7;margin-top:20px" fxLayoutAlign="center center" [fxShow]="true">
+            <div (click)="modalController(&apos;left&apos;,&apos;comp&apos;)">
+              Cheak details</div>
+          </div>
         </div>
       </div>
     </div>
@@ -400,9 +410,9 @@
     </div>
   </div>
 </div>
-<div fxLayout="column wrap" class="left_modal" fxLayoutAlign="start center" [fxShow]="true" fxShow.gt-md="{{page.leftModal}}" fxHide.lt-md="true">
+<div fxLayout="column wrap" class="left_modal" fxLayoutAlign="start center" [fxShow]="true" fxShow.gt-md="{{page.leftModal}}" fxHide.lt-lg="true">
   <div style="  position: absolute;   top: 5px;   right: 5px;   width: 25px;  height: 25px;background: gray;   border-radius: 50%;   display: flex;   justify-content: center;   align-items: center;   color: white;">
-    <mat-icon style="font-size:15px;padding-top:10px;padding-left:5px">close</mat-icon>
+    <mat-icon style="font-size:15px;padding-top:10px;padding-left:5px" (click)="modalController(&apos;left&apos;,page.modalContent)">close</mat-icon>
   </div>
   <div fxLayout="column wrap" style="width:100%" class="left_hit_ani" fxLayoutAlign="center center" [fxShow]="page.modalContent==&apos;basic&apos;">
     <div fxLayout="column wrap" style="width:90%;margin-top:30px" fxLayoutAlign="start stretch" [fxShow]="true">
@@ -416,7 +426,7 @@
         <mat-icon style="font-size:15px;padding-top:10px;padding-left:5px">expand_more</mat-icon>
       </div>
     </div>
-    <div fxLayout="column wrap" style="width:90%;background:#E4F9F9;margin-top:10px;border-radius:15px;padding: 15px ;" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="column wrap" style="width:90%;background:#E4F9F9;margin-top:10px;border-radius:15px;padding: 15px ;font-weight:600" fxLayoutAlign="start stretch" [fxShow]="true">
       <div style="font-size: 14px;font-weight:600;color:#475973">
         Benefits list</div>
       <div style="font-size: 14px;font-weight:400;color:#516684;padding-top:5px">
@@ -431,17 +441,92 @@
         Claim in a click</div>
       <div style="font-size: 14px;font-weight:600;color:#475973">
         Optional Benefits</div>
-      <div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true">
+      <div fxLayout="row " style="width:100%;margin-top:10px" fxLayoutAlign="start center" [fxShow]="true">
         <div style="width:60%;font-size: 14px;font-weight:400;color:#516684;">
           Claim in a click</div>
-        <div fxLayout="row wrap" style="width:40%" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="row wrap" style="width:34%" fxLayoutAlign="space-between stretch" [fxShow]="true">
           <div style="font-size: 14px;font-weight:400;color:#516684;">
             SR <span style="font-weight:600"> 200</span></div>
-          <div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true">
-            <div style="color:#516684;font-size: 10px;">
-              <mat-icon style="color:#516684;font-size: 15px; width:15px;">check_circle_outline</mat-icon>
+          <div fxLayout="row wrap" style="color:#3AAD48" fxFlex="45" fxLayoutAlign="space-between center" [fxShow]="true">
+            <div>
+              <mat-icon [inline]="true">check_circle_outline</mat-icon>
             </div>
-            <div style="font-size: 14px;font-weight:400;color:#516684;">
+            <div style="font-size: 14px;font-weight:400;">
+              Added</div>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="row " style="width:100%;margin-top:10px" fxLayoutAlign="start center" [fxShow]="true">
+        <div style="width:60%;font-size: 14px;font-weight:400;color:#516684;">
+          Claim in a click</div>
+        <div fxLayout="row wrap" style="width:34%" fxLayoutAlign="space-between stretch" [fxShow]="true">
+          <div style="font-size: 14px;font-weight:400;color:#516684;">
+            SR <span style="font-weight:600"> 200</span></div>
+          <div fxLayout="row wrap" style="color:#218BC4" fxFlex="45" fxLayoutAlign="space-between center" [fxShow]="true">
+            <div>
+              <mat-icon [inline]="true">add_circle_outline</mat-icon>
+            </div>
+            <div style="font-size: 14px;font-weight:400;">
+              Added</div>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="row " style="width:100%;margin-top:10px" fxLayoutAlign="start center" [fxShow]="true">
+        <div style="width:60%;font-size: 14px;font-weight:400;color:#516684;">
+          Claim in a click</div>
+        <div fxLayout="row wrap" style="width:34%" fxLayoutAlign="space-between stretch" [fxShow]="true">
+          <div style="font-size: 14px;font-weight:400;color:#516684;">
+            SR <span style="font-weight:600"> 200</span></div>
+          <div fxLayout="row wrap" style="color:#218BC4" fxFlex="45" fxLayoutAlign="space-between center" [fxShow]="true">
+            <div>
+              <mat-icon [inline]="true">add_circle_outline</mat-icon>
+            </div>
+            <div style="font-size: 14px;font-weight:400;">
+              Added</div>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="row " style="width:100%;margin-top:10px" fxLayoutAlign="start center" [fxShow]="true">
+        <div style="width:60%;font-size: 14px;font-weight:400;color:#516684;">
+          Claim in a click</div>
+        <div fxLayout="row wrap" style="width:34%" fxLayoutAlign="space-between stretch" [fxShow]="true">
+          <div style="font-size: 14px;font-weight:400;color:#516684;">
+            SR <span style="font-weight:600"> 200</span></div>
+          <div fxLayout="row wrap" style="color:#218BC4" fxFlex="45" fxLayoutAlign="space-between center" [fxShow]="true">
+            <div>
+              <mat-icon [inline]="true">add_circle_outline</mat-icon>
+            </div>
+            <div style="font-size: 14px;font-weight:400;">
+              Added</div>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="row " style="width:100%;margin-top:10px" fxLayoutAlign="start center" [fxShow]="true">
+        <div style="width:60%;font-size: 14px;font-weight:400;color:#516684;">
+          Claim in a click</div>
+        <div fxLayout="row wrap" style="width:34%" fxLayoutAlign="space-between stretch" [fxShow]="true">
+          <div style="font-size: 14px;font-weight:400;color:#516684;">
+            SR <span style="font-weight:600"> 200</span></div>
+          <div fxLayout="row wrap" style="color:#218BC4" fxFlex="45" fxLayoutAlign="space-between center" [fxShow]="true">
+            <div>
+              <mat-icon [inline]="true">add_circle_outline</mat-icon>
+            </div>
+            <div style="font-size: 14px;font-weight:400;">
+              Added</div>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="row " style="width:100%;margin-top:10px" fxLayoutAlign="start center" [fxShow]="true">
+        <div style="width:60%;font-size: 14px;font-weight:400;color:#516684;">
+          Claim in a click</div>
+        <div fxLayout="row wrap" style="width:34%" fxLayoutAlign="space-between stretch" [fxShow]="true">
+          <div style="font-size: 14px;font-weight:400;color:#516684;">
+            SR <span style="font-weight:600"> 200</span></div>
+          <div fxLayout="row wrap" style="color:#218BC4" fxFlex="45" fxLayoutAlign="space-between center" [fxShow]="true">
+            <div>
+              <mat-icon [inline]="true">add_circle_outline</mat-icon>
+            </div>
+            <div style="font-size: 14px;font-weight:400;">
               Added</div>
           </div>
         </div>
@@ -491,17 +576,227 @@
         Claim in a click</div>
       <div style="font-size: 14px;font-weight:600;color:#475973">
         Optional Benefits</div>
-      <div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true">
+      <div fxLayout="row " style="width:100%;margin-top:10px" fxLayoutAlign="start center" [fxShow]="true">
         <div style="width:60%;font-size: 14px;font-weight:400;color:#516684;">
           Claim in a click</div>
-        <div fxLayout="row wrap" style="width:40%" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="row wrap" style="width:34%" fxLayoutAlign="space-between stretch" [fxShow]="true">
           <div style="font-size: 14px;font-weight:400;color:#516684;">
             SR <span style="font-weight:600"> 200</span></div>
-          <div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true">
-            <div style="color:#516684;font-size: 10px;">
-              <mat-icon style="color:#516684;font-size: 15px; width:15px;">check_circle_outline</mat-icon>
+          <div fxLayout="row wrap" style="color:#3AAD48" fxFlex="45" fxLayoutAlign="space-between center" [fxShow]="true">
+            <div>
+              <mat-icon [inline]="true">check_circle_outline</mat-icon>
             </div>
-            <div style="font-size: 14px;font-weight:400;color:#516684;">
+            <div style="font-size: 14px;font-weight:400;">
+              Added</div>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="row " style="width:100%;margin-top:10px" fxLayoutAlign="start center" [fxShow]="true">
+        <div style="width:60%;font-size: 14px;font-weight:400;color:#516684;">
+          Claim in a click</div>
+        <div fxLayout="row wrap" style="width:34%" fxLayoutAlign="space-between stretch" [fxShow]="true">
+          <div style="font-size: 14px;font-weight:400;color:#516684;">
+            SR <span style="font-weight:600"> 200</span></div>
+          <div fxLayout="row wrap" style="color:#218BC4" fxFlex="45" fxLayoutAlign="space-between center" [fxShow]="true">
+            <div>
+              <mat-icon [inline]="true">add_circle_outline</mat-icon>
+            </div>
+            <div style="font-size: 14px;font-weight:400;">
+              Added</div>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="row " style="width:100%;margin-top:10px" fxLayoutAlign="start center" [fxShow]="true">
+        <div style="width:60%;font-size: 14px;font-weight:400;color:#516684;">
+          Claim in a click</div>
+        <div fxLayout="row wrap" style="width:34%" fxLayoutAlign="space-between stretch" [fxShow]="true">
+          <div style="font-size: 14px;font-weight:400;color:#516684;">
+            SR <span style="font-weight:600"> 200</span></div>
+          <div fxLayout="row wrap" style="color:#218BC4" fxFlex="45" fxLayoutAlign="space-between center" [fxShow]="true">
+            <div>
+              <mat-icon [inline]="true">add_circle_outline</mat-icon>
+            </div>
+            <div style="font-size: 14px;font-weight:400;">
+              Added</div>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="row " style="width:100%;margin-top:10px" fxLayoutAlign="start center" [fxShow]="true">
+        <div style="width:60%;font-size: 14px;font-weight:400;color:#516684;">
+          Claim in a click</div>
+        <div fxLayout="row wrap" style="width:34%" fxLayoutAlign="space-between stretch" [fxShow]="true">
+          <div style="font-size: 14px;font-weight:400;color:#516684;">
+            SR <span style="font-weight:600"> 200</span></div>
+          <div fxLayout="row wrap" style="color:#218BC4" fxFlex="45" fxLayoutAlign="space-between center" [fxShow]="true">
+            <div>
+              <mat-icon [inline]="true">add_circle_outline</mat-icon>
+            </div>
+            <div style="font-size: 14px;font-weight:400;">
+              Added</div>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="row " style="width:100%;margin-top:10px" fxLayoutAlign="start center" [fxShow]="true">
+        <div style="width:60%;font-size: 14px;font-weight:400;color:#516684;">
+          Claim in a click</div>
+        <div fxLayout="row wrap" style="width:34%" fxLayoutAlign="space-between stretch" [fxShow]="true">
+          <div style="font-size: 14px;font-weight:400;color:#516684;">
+            SR <span style="font-weight:600"> 200</span></div>
+          <div fxLayout="row wrap" style="color:#218BC4" fxFlex="45" fxLayoutAlign="space-between center" [fxShow]="true">
+            <div>
+              <mat-icon [inline]="true">add_circle_outline</mat-icon>
+            </div>
+            <div style="font-size: 14px;font-weight:400;">
+              Added</div>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="row " style="width:100%;margin-top:10px" fxLayoutAlign="start center" [fxShow]="true">
+        <div style="width:60%;font-size: 14px;font-weight:400;color:#516684;">
+          Claim in a click</div>
+        <div fxLayout="row wrap" style="width:34%" fxLayoutAlign="space-between stretch" [fxShow]="true">
+          <div style="font-size: 14px;font-weight:400;color:#516684;">
+            SR <span style="font-weight:600"> 200</span></div>
+          <div fxLayout="row wrap" style="color:#218BC4" fxFlex="45" fxLayoutAlign="space-between center" [fxShow]="true">
+            <div>
+              <mat-icon [inline]="true">add_circle_outline</mat-icon>
+            </div>
+            <div style="font-size: 14px;font-weight:400;">
+              Added</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div fxLayout="column wrap" style="width:90%;margin-top:10px;border-radius:15px;padding: 15px ;" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div style="font-size: 18px;font-weight:600;color:#FF0000">
+        Benefits list</div>
+      <div style="font-size: 14px;font-weight:400;color:#516684;padding-top:5px">
+        Personal accident (driver)</div>
+      <div style="font-size: 14px;font-weight:400;color:#516684;padding-top:5px">
+        Personal accident (passengers)</div>
+      <div style="font-size: 14px;font-weight:400;color:#516684;padding-top:5px">
+        Roadside assistance</div>
+      <div style="font-size: 14px;font-weight:400;padding-top:5px;color:#516684">
+        GCC extension</div>
+      <div style="font-size: 14px;font-weight:400;color:#516684;padding-top:5px">
+        Out-patient department costs</div>
+      <div style="font-size: 14px;font-weight:400;color:#516684;padding-top:5px">
+        Multi vehicle discount benefit</div>
+    </div>
+  </div>
+  <div fxLayout="column wrap" style="width:100%" class="left_hit_ani" fxLayoutAlign="center center" [fxShow]="page.modalContent==&apos;comp&apos;">
+    <div fxLayout="column wrap" style="width:90%;margin-top:30px" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div style="font-size:25px;color:#144185;font-weight:600">
+        Wafi Comprehensive</div>
+    </div>
+    <div fxLayout="row wrap" style="width:90%;height:35px;background:#EFF4F7;margin-top:10px;border-radius:15px;padding:5px" fxLayoutAlign="space-between center" [fxShow]="true">
+      <div>
+        Premium Details</div>
+      <div>
+        <mat-icon style="font-size:15px;padding-top:10px;padding-left:5px">expand_more</mat-icon>
+      </div>
+    </div>
+    <div fxLayout="column wrap" style="width:90%;background:#E6F0FF;margin-top:10px;border-radius:15px;padding: 15px ;" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div style="font-size: 14px;font-weight:600;color:#475973">
+        Benefits list</div>
+      <div style="font-size: 14px;font-weight:400;color:#516684;padding-top:5px">
+        Third Party Liability Up to SAR 10 m</div>
+      <div style="font-size: 14px;font-weight:400;padding-top:5px;color:#516684">
+        No Claims Discount benefit</div>
+      <div style="font-size: 14px;font-weight:400;color:#516684;padding-top:5px">
+        Loyalty discount benefit</div>
+      <div style="font-size: 14px;font-weight:400;color:#516684;padding-top:5px">
+        Multi vehicle discount benefit</div>
+      <div style="font-size: 14px;font-weight:400;color:#516684;padding-top:5px">
+        Claim in a click</div>
+      <div style="font-size: 14px;font-weight:600;color:#475973">
+        Optional Benefits</div>
+      <div fxLayout="row " style="width:100%;margin-top:10px" fxLayoutAlign="start center" [fxShow]="true">
+        <div style="width:60%;font-size: 14px;font-weight:400;color:#516684;">
+          Claim in a click</div>
+        <div fxLayout="row wrap" style="width:34%" fxLayoutAlign="space-between stretch" [fxShow]="true">
+          <div style="font-size: 14px;font-weight:400;color:#516684;">
+            SR <span style="font-weight:600"> 200</span></div>
+          <div fxLayout="row wrap" style="color:#3AAD48" fxFlex="45" fxLayoutAlign="space-between center" [fxShow]="true">
+            <div>
+              <mat-icon [inline]="true">check_circle_outline</mat-icon>
+            </div>
+            <div style="font-size: 14px;font-weight:400;">
+              Added</div>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="row " style="width:100%;margin-top:10px" fxLayoutAlign="start center" [fxShow]="true">
+        <div style="width:60%;font-size: 14px;font-weight:400;color:#516684;">
+          Claim in a click</div>
+        <div fxLayout="row wrap" style="width:34%" fxLayoutAlign="space-between stretch" [fxShow]="true">
+          <div style="font-size: 14px;font-weight:400;color:#516684;">
+            SR <span style="font-weight:600"> 200</span></div>
+          <div fxLayout="row wrap" style="color:#218BC4" fxFlex="45" fxLayoutAlign="space-between center" [fxShow]="true">
+            <div>
+              <mat-icon [inline]="true">add_circle_outline</mat-icon>
+            </div>
+            <div style="font-size: 14px;font-weight:400;">
+              Added</div>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="row " style="width:100%;margin-top:10px" fxLayoutAlign="start center" [fxShow]="true">
+        <div style="width:60%;font-size: 14px;font-weight:400;color:#516684;">
+          Claim in a click</div>
+        <div fxLayout="row wrap" style="width:34%" fxLayoutAlign="space-between stretch" [fxShow]="true">
+          <div style="font-size: 14px;font-weight:400;color:#516684;">
+            SR <span style="font-weight:600"> 200</span></div>
+          <div fxLayout="row wrap" style="color:#218BC4" fxFlex="45" fxLayoutAlign="space-between center" [fxShow]="true">
+            <div>
+              <mat-icon [inline]="true">add_circle_outline</mat-icon>
+            </div>
+            <div style="font-size: 14px;font-weight:400;">
+              Added</div>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="row " style="width:100%;margin-top:10px" fxLayoutAlign="start center" [fxShow]="true">
+        <div style="width:60%;font-size: 14px;font-weight:400;color:#516684;">
+          Claim in a click</div>
+        <div fxLayout="row wrap" style="width:34%" fxLayoutAlign="space-between stretch" [fxShow]="true">
+          <div style="font-size: 14px;font-weight:400;color:#516684;">
+            SR <span style="font-weight:600"> 200</span></div>
+          <div fxLayout="row wrap" style="color:#218BC4" fxFlex="45" fxLayoutAlign="space-between center" [fxShow]="true">
+            <div>
+              <mat-icon [inline]="true">add_circle_outline</mat-icon>
+            </div>
+            <div style="font-size: 14px;font-weight:400;">
+              Added</div>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="row " style="width:100%;margin-top:10px" fxLayoutAlign="start center" [fxShow]="true">
+        <div style="width:60%;font-size: 14px;font-weight:400;color:#516684;">
+          Claim in a click</div>
+        <div fxLayout="row wrap" style="width:34%" fxLayoutAlign="space-between stretch" [fxShow]="true">
+          <div style="font-size: 14px;font-weight:400;color:#516684;">
+            SR <span style="font-weight:600"> 200</span></div>
+          <div fxLayout="row wrap" style="color:#218BC4" fxFlex="45" fxLayoutAlign="space-between center" [fxShow]="true">
+            <div>
+              <mat-icon [inline]="true">add_circle_outline</mat-icon>
+            </div>
+            <div style="font-size: 14px;font-weight:400;">
+              Added</div>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="row " style="width:100%;margin-top:10px" fxLayoutAlign="start center" [fxShow]="true">
+        <div style="width:60%;font-size: 14px;font-weight:400;color:#516684;">
+          Claim in a click</div>
+        <div fxLayout="row wrap" style="width:34%" fxLayoutAlign="space-between stretch" [fxShow]="true">
+          <div style="font-size: 14px;font-weight:400;color:#516684;">
+            SR <span style="font-weight:600"> 200</span></div>
+          <div fxLayout="row wrap" style="color:#218BC4" fxFlex="45" fxLayoutAlign="space-between center" [fxShow]="true">
+            <div>
+              <mat-icon [inline]="true">add_circle_outline</mat-icon>
+            </div>
+            <div style="font-size: 14px;font-weight:400;">
               Added</div>
           </div>
         </div>
@@ -543,15 +838,212 @@
           <button mat-button style="    border-radius:50px;     border:solid 2px #19A8D3;" class="coverage_smart_btn" [style.background]="page.modalContent==&apos;smart&apos;?&apos;#19A8D3&apos;:&apos;#fff&apos;" [style.color]="page.modalContent==&apos;smart&apos;?&apos;#fff&apos;:&apos;#19A8D3&apos;" (click)="switchModalCnt(&apos;smart&apos;)">Wafi smart</button>
         </div>
         <div>
-          <button mat-button style="  border-radius:50px;   border:solid 2px#19A8D3;" class="coverage_comp_btn" [style.background]="page.modalContent==&apos;comp&apos;?&apos;#218BC4&apos;:&apos;#fff&apos;" [style.color]="page.modalContent==&apos;comp&apos;?&apos;#fff&apos;:&apos;#19A8D3&apos;" (click)="switchModalCnt(&apos;comp&apos;)">Wafi Comprehensive</button>
+          <button mat-button style="  border-radius:50px;   border:solid 2px #144185;" class="coverage_comp_btn" [style.background]="page.modalContent==&apos;comp&apos;?&apos;#144185&apos;:&apos;#fff&apos;" [style.color]="page.modalContent==&apos;comp&apos;?&apos;#fff&apos;:&apos;#144185&apos;" (click)="switchModalCnt(&apos;comp&apos;)">Wafi Comprehensive</button>
         </div>
       </div>
     </div>
   </div>
-  <div fxLayout="column wrap" style="width:90%" class="left_hit_ani" fxLayoutAlign="center center" [fxShow]="page.modalContent==&apos;comp&apos;">
+</div>
+<div fxLayout="column wrap" class="bottom_modal" fxLayoutAlign="none center" [fxShow]="page.bottomModal" fxHide.gt-sm="true">
+  <div style="width:30%;padding-top:4px;margin-top:15px;background-color:#00000014;border-radius:10px">
+  </div>
+  <div fxLayout="column wrap" style="width:100%" fxLayoutAlign="center center" [fxShow]="page.modalContent==&apos;basic&apos;">
     <div fxLayout="column wrap" style="width:90%;margin-top:30px" fxLayoutAlign="start stretch" [fxShow]="true">
-      <div style="font-size:25px;color:#144185;font-weight:600">
-        Wafi Comprehensive</div>
+      <div fxLayout="row wrap" style="width:100%" fxLayoutAlign="space-between stretch" [fxShow]="true">
+        <div style="font-size:25px;color:#00B1AB;font-weight:600">
+          Wafi Basic</div>
+        <div>
+          SAR <span style="font-size:20px;color:##144185;font-weight:600"> 950</span> &#xA0;SAR <span style="font-size:20px;color:#00B1AB;font-weight:600"> 950 </span></div>
+      </div>
+    </div>
+    <div fxLayout="row wrap" style="width:90%;height:35px;background:#EFF4F7;margin-top:10px;border-radius:15px;padding:5px" fxLayoutAlign="space-between center" [fxShow]="true">
+      <div>
+        Premium Details</div>
+      <div>
+        <mat-icon style="font-size:15px;padding-top:10px;padding-left:5px">expand_more</mat-icon>
+      </div>
+    </div>
+    <div fxLayout="column wrap" style="width:90%;background:#E4F9F9;margin-top:10px;border-radius:15px;padding: 15px ;" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div style="font-size: 14px;font-weight:600;color:#475973;padding-top:20px">
+        Benefits list</div>
+      <div style="font-size: 14px;font-weight:400;color:#516684;padding-top:20px">
+        Third Party Liability Up to SAR 10 m</div>
+      <div style="font-size: 14px;font-weight:400;padding-top:10px;padding-top:20px;color:#516684">
+        No Claims Discount benefit</div>
+      <div style="font-size: 14px;font-weight:400;padding-top:20px;color:#516684;">
+        Loyalty discount benefit</div>
+      <div style="font-size: 14px;font-weight:400;padding-top:20px;color:#516684;">
+        Multi vehicle discount benefit</div>
+      <div style="font-size: 14px;font-weight:400;padding-top:20px;color:#516684;">
+        Claim in a click</div>
+      <div style="font-size: 14px;font-weight:600;padding-top:20px;color:#475973">
+        Optional Benefits</div>
+      <div fxLayout="row " style="width:100%;margin-top:10px" fxLayoutAlign="space-between center" [fxShow]="true">
+        <div style="width:60%;font-size: 14px;font-weight:400;color:#516684;">
+          Claim in a click</div>
+        <div fxLayout="row wrap" style="width:24%" fxLayoutAlign="space-evenly space-between" [fxShow]="true">
+          <div style="font-size: 14px;font-weight:400;color:#516684;">
+            SR <span style="font-weight:600"> 200</span></div>
+          <div fxLayout="row wrap" style="color:#3AAD48" fxFlex="45" fxLayoutAlign="end center" [fxShow]="true">
+            <div>
+              <mat-icon [inline]="true">check_circle_outline</mat-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="row " style="width:100%;margin-top:10px" fxLayoutAlign="space-between center" [fxShow]="true">
+        <div style="width:60%;font-size: 14px;font-weight:400;color:#516684;">
+          Claim in a click</div>
+        <div fxLayout="row wrap" style="width:24%" fxLayoutAlign="space-evenly space-between" [fxShow]="true">
+          <div style="font-size: 14px;font-weight:400;color:#516684;">
+            SR <span style="font-weight:600"> 200</span></div>
+          <div fxLayout="row wrap" style="color:#228BC4" fxFlex="45" fxLayoutAlign="end center" [fxShow]="true">
+            <div>
+              <mat-icon [inline]="true">add_circle_outline</mat-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="row " style="width:100%;margin-top:10px" fxLayoutAlign="space-between center" [fxShow]="true">
+        <div style="width:60%;font-size: 14px;font-weight:400;color:#516684;">
+          Claim in a click</div>
+        <div fxLayout="row wrap" style="width:24%" fxLayoutAlign="space-evenly space-between" [fxShow]="true">
+          <div style="font-size: 14px;font-weight:400;color:#516684;">
+            SR <span style="font-weight:600"> 200</span></div>
+          <div fxLayout="row wrap" style="color:#228BC4" fxFlex="45" fxLayoutAlign="end center" [fxShow]="true">
+            <div>
+              <mat-icon [inline]="true">add_circle_outline</mat-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div fxLayout="column wrap" style="width:90%;margin-top:10px;border-radius:15px;padding: 15px ;" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div style="font-size: 18px;font-weight:600;color:#FF0000">
+        Benefits list</div>
+      <div style="font-size: 14px;font-weight:400;color:#516684;padding-top:5px">
+        Personal accident (driver)</div>
+      <div style="font-size: 14px;font-weight:400;color:#516684;padding-top:5px">
+        Personal accident (passengers)</div>
+      <div style="font-size: 14px;font-weight:400;color:#516684;padding-top:5px">
+        Roadside assistance</div>
+      <div style="font-size: 14px;font-weight:400;padding-top:5px;color:#516684">
+        GCC extension</div>
+      <div style="font-size: 14px;font-weight:400;color:#516684;padding-top:5px">
+        Out-patient department costs</div>
+      <div style="font-size: 14px;font-weight:400;color:#516684;padding-top:5px">
+        Multi vehicle discount benefit</div>
+    </div>
+  </div>
+  <div fxLayout="column wrap" style="width:100%" fxLayoutAlign="center center" [fxShow]="page.modalContent==&apos;smart&apos;">
+    <div fxLayout="column wrap" style="width:90%;margin-top:30px" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="row wrap" style="width:100%" fxLayoutAlign="space-between stretch" [fxShow]="true">
+        <div style="font-size:25px;color:#00AAD8;font-weight:600">
+          Wafi Smart</div>
+        <div>
+          SAR <span style="font-size:20px;color:#144185;font-weight:600"> 950</span> &#xA0;SAR <span style="font-size:20px;color:#00AAD8;font-weight:600"> 950 </span></div>
+      </div>
+    </div>
+    <div fxLayout="row wrap" style="width:90%;height:35px;background:#EFF4F7;margin-top:10px;border-radius:15px;padding:5px" fxLayoutAlign="space-between center" [fxShow]="true">
+      <div>
+        Premium Details</div>
+      <div>
+        <mat-icon style="font-size:15px;padding-top:10px;padding-left:5px">expand_more</mat-icon>
+      </div>
+    </div>
+    <div fxLayout="column wrap" style="width:90%;background:#E4F9F9;margin-top:10px;border-radius:15px;padding: 15px ;" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div style="font-size: 14px;font-weight:600;color:#475973;padding-top:20px">
+        Benefits list</div>
+      <div style="font-size: 14px;font-weight:400;color:#516684;padding-top:20px">
+        Third Party Liability Up to SAR 10 m</div>
+      <div style="font-size: 14px;font-weight:400;padding-top:10px;padding-top:20px;color:#516684">
+        No Claims Discount benefit</div>
+      <div style="font-size: 14px;font-weight:400;padding-top:20px;color:#516684;">
+        Loyalty discount benefit</div>
+      <div style="font-size: 14px;font-weight:400;padding-top:20px;color:#516684;">
+        Multi vehicle discount benefit</div>
+      <div style="font-size: 14px;font-weight:400;padding-top:20px;color:#516684;">
+        Claim in a click</div>
+      <div style="font-size: 14px;font-weight:600;padding-top:20px;color:#475973">
+        Optional Benefits</div>
+      <div fxLayout="row " style="width:100%;margin-top:10px" fxLayoutAlign="space-between center" [fxShow]="true">
+        <div style="width:60%;font-size: 14px;font-weight:400;color:#516684;">
+          Claim in a click</div>
+        <div fxLayout="row wrap" style="width:24%" fxLayoutAlign="space-evenly space-between" [fxShow]="true">
+          <div style="font-size: 14px;font-weight:400;color:#516684;">
+            SR <span style="font-weight:600"> 200</span></div>
+          <div fxLayout="row wrap" style="color:#228BC4" fxFlex="45" fxLayoutAlign="end center" [fxShow]="true">
+            <div>
+              <mat-icon [inline]="true">add_circle_outline</mat-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="row " style="width:100%;margin-top:10px" fxLayoutAlign="space-between center" [fxShow]="true">
+        <div style="width:60%;font-size: 14px;font-weight:400;color:#516684;">
+          Claim in a click</div>
+        <div fxLayout="row wrap" style="width:24%" fxLayoutAlign="space-evenly space-between" [fxShow]="true">
+          <div style="font-size: 14px;font-weight:400;color:#516684;">
+            SR <span style="font-weight:600"> 200</span></div>
+          <div fxLayout="row wrap" style="color:#228BC4" fxFlex="45" fxLayoutAlign="end center" [fxShow]="true">
+            <div>
+              <mat-icon [inline]="true">add_circle_outline</mat-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="row " style="width:100%;margin-top:10px" fxLayoutAlign="space-between center" [fxShow]="true">
+        <div style="width:60%;font-size: 14px;font-weight:400;color:#516684;">
+          Claim in a click</div>
+        <div fxLayout="row wrap" style="width:24%" fxLayoutAlign="space-evenly space-between" [fxShow]="true">
+          <div style="font-size: 14px;font-weight:400;color:#516684;">
+            SR <span style="font-weight:600"> 200</span></div>
+          <div fxLayout="row wrap" style="color:#228BC4" fxFlex="45" fxLayoutAlign="end center" [fxShow]="true">
+            <div>
+              <mat-icon [inline]="true">add_circle_outline</mat-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="row " style="width:100%;margin-top:10px" fxLayoutAlign="space-between center" [fxShow]="true">
+        <div style="width:60%;font-size: 14px;font-weight:400;color:#516684;">
+          Claim in a click</div>
+        <div fxLayout="row wrap" style="width:24%" fxLayoutAlign="space-evenly space-between" [fxShow]="true">
+          <div style="font-size: 14px;font-weight:400;color:#516684;">
+            SR <span style="font-weight:600"> 200</span></div>
+          <div fxLayout="row wrap" style="color:#228BC4" fxFlex="45" fxLayoutAlign="end center" [fxShow]="true">
+            <div>
+              <mat-icon [inline]="true">add_circle_outline</mat-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div fxLayout="column wrap" style="width:90%;margin-top:10px;border-radius:15px;padding: 15px ;" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div style="font-size: 18px;font-weight:600;color:#FF0000">
+        Benefits list</div>
+      <div style="font-size: 14px;font-weight:400;color:#516684;padding-top:5px">
+        Personal accident (driver)</div>
+      <div style="font-size: 14px;font-weight:400;color:#516684;padding-top:5px">
+        Personal accident (passengers)</div>
+      <div style="font-size: 14px;font-weight:400;color:#516684;padding-top:5px">
+        Roadside assistance</div>
+      <div style="font-size: 14px;font-weight:400;padding-top:5px;color:#516684">
+        GCC extension</div>
+      <div style="font-size: 14px;font-weight:400;color:#516684;padding-top:5px">
+        Out-patient department costs</div>
+      <div style="font-size: 14px;font-weight:400;color:#516684;padding-top:5px">
+        Multi vehicle discount benefit</div>
+    </div>
+  </div>
+  <div fxLayout="column wrap" style="width:100%" fxLayoutAlign="center center" [fxShow]="page.modalContent==&apos;comp&apos;">
+    <div fxLayout="column wrap" style="width:90%;margin-top:30px" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="row wrap" style="width:100%" fxLayoutAlign="space-between stretch" [fxShow]="true">
+        <div style="font-size:25px;color:#144185;font-weight:600">
+          Wafi Comprehensive</div>
+        <div>
+          SAR <span style="font-size:20px;color:#144185;font-weight:600"> 950</span> &#xA0;SAR <span style="font-size:20px;color:#144185;font-weight:600"> 950 </span></div>
+      </div>
     </div>
     <div fxLayout="row wrap" style="width:90%;height:35px;background:#EFF4F7;margin-top:10px;border-radius:15px;padding:5px" fxLayoutAlign="space-between center" [fxShow]="true">
       <div>
@@ -561,32 +1053,69 @@
       </div>
     </div>
     <div fxLayout="column wrap" style="width:90%;background:#E6F0FF;margin-top:10px;border-radius:15px;padding: 15px ;" fxLayoutAlign="start stretch" [fxShow]="true">
-      <div style="font-size: 14px;font-weight:600;color:#475973">
+      <div style="font-size: 14px;font-weight:600;color:#475973;padding-top:20px">
         Benefits list</div>
-      <div style="font-size: 14px;font-weight:400;color:#516684;padding-top:5px">
+      <div style="font-size: 14px;font-weight:400;color:#516684;padding-top:20px">
         Third Party Liability Up to SAR 10 m</div>
-      <div style="font-size: 14px;font-weight:400;padding-top:5px;color:#516684">
+      <div style="font-size: 14px;font-weight:400;padding-top:10px;padding-top:20px;color:#516684">
         No Claims Discount benefit</div>
-      <div style="font-size: 14px;font-weight:400;color:#516684;padding-top:5px">
+      <div style="font-size: 14px;font-weight:400;padding-top:20px;color:#516684;">
         Loyalty discount benefit</div>
-      <div style="font-size: 14px;font-weight:400;color:#516684;padding-top:5px">
+      <div style="font-size: 14px;font-weight:400;padding-top:20px;color:#516684;">
         Multi vehicle discount benefit</div>
-      <div style="font-size: 14px;font-weight:400;color:#516684;padding-top:5px">
+      <div style="font-size: 14px;font-weight:400;padding-top:20px;color:#516684;">
         Claim in a click</div>
-      <div style="font-size: 14px;font-weight:600;color:#475973">
+      <div style="font-size: 14px;font-weight:600;padding-top:20px;color:#475973">
         Optional Benefits</div>
-      <div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true">
+      <div fxLayout="row " style="width:100%;margin-top:10px" fxLayoutAlign="space-between center" [fxShow]="true">
         <div style="width:60%;font-size: 14px;font-weight:400;color:#516684;">
           Claim in a click</div>
-        <div fxLayout="row wrap" style="width:40%" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="row wrap" style="width:24%" fxLayoutAlign="space-evenly space-between" [fxShow]="true">
           <div style="font-size: 14px;font-weight:400;color:#516684;">
             SR <span style="font-weight:600"> 200</span></div>
-          <div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true">
-            <div style="color:#516684;font-size: 10px;">
-              <mat-icon style="color:#516684;font-size: 15px; width:15px;">check_circle_outline</mat-icon>
+          <div fxLayout="row wrap" style="color:#228BC4" fxFlex="45" fxLayoutAlign="end center" [fxShow]="true">
+            <div>
+              <mat-icon [inline]="true">add_circle_outline</mat-icon>
             </div>
-            <div style="font-size: 14px;font-weight:400;color:#516684;">
-              Added</div>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="row " style="width:100%;margin-top:10px" fxLayoutAlign="space-between center" [fxShow]="true">
+        <div style="width:60%;font-size: 14px;font-weight:400;color:#516684;">
+          Claim in a click</div>
+        <div fxLayout="row wrap" style="width:24%" fxLayoutAlign="space-evenly space-between" [fxShow]="true">
+          <div style="font-size: 14px;font-weight:400;color:#516684;">
+            SR <span style="font-weight:600"> 200</span></div>
+          <div fxLayout="row wrap" style="color:#228BC4" fxFlex="45" fxLayoutAlign="end center" [fxShow]="true">
+            <div>
+              <mat-icon [inline]="true">add_circle_outline</mat-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="row " style="width:100%;margin-top:10px" fxLayoutAlign="space-between center" [fxShow]="true">
+        <div style="width:60%;font-size: 14px;font-weight:400;color:#516684;">
+          Claim in a click</div>
+        <div fxLayout="row wrap" style="width:24%" fxLayoutAlign="space-evenly space-between" [fxShow]="true">
+          <div style="font-size: 14px;font-weight:400;color:#516684;">
+            SR <span style="font-weight:600"> 200</span></div>
+          <div fxLayout="row wrap" style="color:#228BC4" fxFlex="45" fxLayoutAlign="end center" [fxShow]="true">
+            <div>
+              <mat-icon [inline]="true">add_circle_outline</mat-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="row " style="width:100%;margin-top:10px" fxLayoutAlign="space-between center" [fxShow]="true">
+        <div style="width:60%;font-size: 14px;font-weight:400;color:#516684;">
+          Claim in a click</div>
+        <div fxLayout="row wrap" style="width:24%" fxLayoutAlign="space-evenly space-between" [fxShow]="true">
+          <div style="font-size: 14px;font-weight:400;color:#516684;">
+            SR <span style="font-weight:600"> 200</span></div>
+          <div fxLayout="row wrap" style="color:#228BC4" fxFlex="45" fxLayoutAlign="end center" [fxShow]="true">
+            <div>
+              <mat-icon [inline]="true">add_circle_outline</mat-icon>
+            </div>
           </div>
         </div>
       </div>

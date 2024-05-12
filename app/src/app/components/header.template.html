@@ -1,9 +1,9 @@
 <div fxLayout="row wrap" style=" padding-left:4%;padding-right: 4%;" class="header_container" fxLayoutAlign="space-between center" [fxShow]="true">
-  <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" fxFlex.lt-md="50">
-    <div>
-      <img [src]="&apos;https://www.shutterstock.com/image-vector/letter-s-cube-3d-box-600nw-693536233.jpg&apos;" width="60px">
+  <div fxLayout="row wrap" fxLayoutAlign="start center" [fxShow]="true" fxFlex.lt-md="50">
+    <div style="margin-left:10px ">
+      <img imgSrc="/Web/Icons/logo.jpg" width="60px">
     </div>
-    <div fxHide.lt-md="true" style=" border-left: 1px solid #0000000F; height: 60px; ">
+    <div fxHide.lt-md="true" style=" border-left: 1px solid #0000000F; height: 60px;margin-left:10px ">
     </div>
     <div fxLayout="row wrap" style="margin-left:10px" fxLayoutAlign="space-around center" [fxShow]="true" fxHide.lt-md="true">
       <div fxLayout="row wrap" fxLayoutAlign="space-around center" [fxShow]="true">
@@ -11,7 +11,7 @@
           <p>
             1</p>
         </div>
-        <div style="padding-left:10px">
+        <div fxShow="{{page.content==&apos;basic&apos;}}" style="padding-left:10px;color:#218BC4">
           Premium Calculation &amp; Quotation</div>
       </div>
       <div style="height:1px;background:#AEB8C7;width:50px;margin-left:9px">

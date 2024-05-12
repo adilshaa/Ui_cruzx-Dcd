@@ -111,7 +111,7 @@
                 },
                 {
                     "_key": "pLayoutAlign",
-                    "_value": "stretch",
+                    "_value": "center",
                     "_type": "a",
                     "_attrDef": "p"
                 },
@@ -136,7 +136,7 @@
                 "designerReference": [
                     {
                         "_key": "style",
-                        "_value": "",
+                        "_value": "margin-left:10px ",
                         "_type": "kv",
                         "_attrDef": "p"
                     },
@@ -341,7 +341,7 @@
                         },
                         {
                             "_key": "imgSrc",
-                            "_value": "",
+                            "_value": "/Web/Icons/logo.jpg",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -353,7 +353,7 @@
                         },
                         {
                             "_key": "[src]",
-                            "_value": "'https://www.shutterstock.com/image-vector/letter-s-cube-3d-box-600nw-693536233.jpg'",
+                            "_value": "",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -418,7 +418,7 @@
                 "designerReference": [
                     {
                         "_key": "style",
-                        "_value": " border-left: 1px solid #0000000F; height: 60px; ",
+                        "_value": " border-left: 1px solid #0000000F; height: 60px;margin-left:10px ",
                         "_type": "kv",
                         "_attrDef": "p"
                     },
@@ -1168,7 +1168,7 @@
                         "designerReference": [
                             {
                                 "_key": "style",
-                                "_value": "padding-left:10px",
+                                "_value": "padding-left:10px;color:#218BC4",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
@@ -1345,6 +1345,12 @@
                                 "_type": "kv",
                                 "_attrDef": "p",
                                 "_visibility": false
+                            },
+                            {
+                                "_key": "fxShow",
+                                "_value": "{{page.content=='basic'}}",
+                                "_type": "kv",
+                                "_attrDef": "c"
                             }
                         ],
                         "5308fed0-b1ea-248c-8afc-b02b4a351f3a": {

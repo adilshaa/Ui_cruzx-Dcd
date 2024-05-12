@@ -31,8 +31,8 @@
         "pageVariables": [],
         "functionName": "sd_4Q5qYjNPpqLwtieb",
         "category": "Lifecycle Events",
-        "x": 30,
-        "y": 30,
+        "x": 45,
+        "y": 40,
         "wires": [
             [
                 "sd_UFTTAKBm8QND1tMF"
@@ -82,7 +82,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "console.log(page.id.id)",
+        "script": "page.content=page.id.id\nconsole.log(page.content)",
         "functionName": "sd_l4qKEgiZ3IgxCE4n",
         "category": "Function",
         "x": 320,

@@ -73,7 +73,8 @@ export class headerComponent {
   sd_l4qKEgiZ3IgxCE4n(bh) {
     try {
       const page = this.page;
-      console.log(page.id.id);
+      page.content = page.id.id;
+      console.log(page.content);
       //appendnew_next_sd_l4qKEgiZ3IgxCE4n
       return bh;
     } catch (e) {

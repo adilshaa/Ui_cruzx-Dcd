@@ -89,6 +89,17 @@ body{
   transform-origin: top right;
   transform: rotate(45deg);
 }
+.horizontal_div{
+    position: absolute;
+  background: #ffff;
+  width: 100px;
+  height: 20px;
+  top: 0; /* Position the child div at the top of its parent */
+  left: 50%; /* Position the child div at the center horizontally */
+    margin-left: -50px; /* Move the child div 50% to the left to center it */
+  border-radius: 5px;
+
+}
 
 
 .dash{
@@ -109,26 +120,28 @@ width:100%;margin:0;
   box-shadow: 0 0 10px var(--secondary-color);
   transition: right 0.3s ease; /* Smooth transition for modal movement */
   z-index: 1000;
-    overflow: hidden;
+  overflow: hidden;
+    //   overflow-y: auto; /* or overflow-y: scroll; */
+    //   border: 1px solid #ccc;
 }
 
-.center_modal {
+.bottom_modal {
   position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 400px;
-  max-width: 90%; /* Ensure modal doesn't exceed 90% of viewport width */
-  max-height: 90%; /* Ensure modal doesn't exceed 90% of viewport height */
-  background-color: var(--container-color);
+ bottom: 0;
+  width: 100%;
+  background-color: #ffff; 
   box-shadow: 0 0 10px var(--secondary-color);
   transition: transform 0.3s ease; /* Smooth transition for modal movement */
   z-index: 1000;
+  opacity: 0; /* Initially hide the div */
+    animation: fadeIn .3s ease forwards; /* Apply the fadeIn animation */
+    border-radius: 20px 20px 0px 0px ;
+    // height:800px;
 }
  
 .left_hit_ani{
-  animation: slideIn 1s forwards, hitEffect 0.2s forwards, moveBack 0.2s 0.2s forwards;
- 
+  animation: slideInAndHit .3s ease-out forwards;
+
 }
 
 .horizontal-scroller {
@@ -154,6 +167,7 @@ width:100%;margin:0;
   display: none;
 }
 
+
 .coverage_basic_btn{
     padding:7px 20px;
     background:#00AEAA;
@@ -168,35 +182,33 @@ width:100%;margin:0;
 }
 .coverage_comp_btn{
     padding:7px 20px;
-    background:#19A8D3;
-    color:#19A8D3;
+    background:#144185;
+    color:#144185;
   
 }
 
 
-@keyframes slideIn {
+@keyframes slideInAndHit {
   0% {
     transform: translateX(-100%);
+  }
+  70% {
+    transform: translateX(0%);
+  }
+  85% {
+    transform: translateX(20px);
   }
   100% {
     transform: translateX(0%);
   }
 }
+// fade open Animation
 
-@keyframes hitEffect {
-  0%, 100% {
-    transform: translateX(0%);
-  }
-  50% {
-    transform: translateX(10px);
-  }
-}
-
-@keyframes moveBack {
-  0%, 100% {
-    transform: translateX(0%);
-  }
-  50% {
-    transform: translateX(-5px);
-  }
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Start with opacity 0 */
+    }
+    to {
+        opacity: 1; /* End with opacity 1 */
+    }
 }

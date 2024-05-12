@@ -131,8 +131,9 @@ export class homeComponent {
       const page = this.page;
       page.insureModal = false;
       page.leftModal = false;
-      page.centerModal = false;
+      page.bottomModal = false;
       page.modalContent = 'basic';
+      page.overlay = false;
       //appendnew_next_sd_oExKQDkOnt8mJjGF
       return bh;
     } catch (e) {
@@ -146,8 +147,10 @@ export class homeComponent {
 
       if (page.insureModal == false) {
         page.insureModal = true;
+        page.overlay = true;
       } else {
         page.insureModal = false;
+        page.overlay = false;
       }
       //appendnew_next_sd_3uav6M1viC3WLmzu
       return bh;
@@ -166,12 +169,27 @@ export class homeComponent {
       page.modalContent = content;
 
       const left = () => {
-        if (!page.leftModal) page.leftModal = true;
-        else page.leftModal = false;
+        if (!page.leftModal) {
+          page.leftModal = true;
+          page.bottomModal = true;
+
+          page.overlay = true;
+        } else {
+          page.leftModal = false;
+          page.bottomModal = false;
+
+          page.overlay = false;
+        }
       };
       const center = () => {
-        if (!page.centerModal) page.centerModal = true;
-        else page.centerModal = false;
+        if (!page.centerModal) {
+          page.overlay = true;
+
+          page.centerModal = true;
+        } else {
+          page.centerModal = false;
+          page.overlay = false;
+        }
       };
 
       if (types === 'left') {
