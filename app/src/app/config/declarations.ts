@@ -16,6 +16,10 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-tabletestComponent
+import { tabletestComponent } from '../components/tabletest.component';
+//CORE_REFERENCE_IMPORT-paginationComponent
+import { paginationComponent } from '../components/pagination.component';
 //CORE_REFERENCE_IMPORT-headerComponent
 import { headerComponent } from '../components/header.component';
 //CORE_REFERENCE_IMPORT-homeComponent
@@ -52,6 +56,10 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-tabletestComponent
+  tabletestComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-paginationComponent
+  paginationComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-headerComponent
   headerComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-homeComponent
@@ -82,6 +90,8 @@ export const appProviders = [
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_START
 export const appRoutes = [
   { path: 'home', component: homeComponent },
+  { path: 'page', component: paginationComponent },
+  { path: 'table', component: tabletestComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];

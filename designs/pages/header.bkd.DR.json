@@ -387,7 +387,8 @@
                     "paletteKey": "html-editor",
                     "parentEditorKey": "bfc79518-0508-64a9-6ed7-a195cdbcd18b",
                     "isAdvancedChildComponent": true,
-                    "commentid": null,
+                    "isCommented": "true",
+                    "commentid": "1715665718248",
                     "designerReference": [
                         {
                             "_key": "style",
@@ -1345,12 +1346,6 @@
                                 "_type": "kv",
                                 "_attrDef": "p",
                                 "_visibility": false
-                            },
-                            {
-                                "_key": "fxShow",
-                                "_value": "{{page.content=='basic'}}",
-                                "_type": "kv",
-                                "_attrDef": "c"
                             }
                         ],
                         "5308fed0-b1ea-248c-8afc-b02b4a351f3a": {
@@ -3724,6 +3719,19 @@
                             "_value": "",
                             "_type": "kv",
                             "_attrDef": "p"
+                        },
+                        {
+                            "_key": "(click)",
+                            "_value": "openModal()",
+                            "_type": "kv",
+                            "_attrDef": "c",
+                            "objValue": {
+                                "nodeID": "sd_IVgTuUemzNzQC5mA",
+                                "functionName": "openModal",
+                                "activeTree": "pages",
+                                "z": "sd_epiaka3XE8FJRKdc",
+                                "input": []
+                            }
                         }
                     ]
                 }

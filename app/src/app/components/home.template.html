@@ -1,5 +1,5 @@
-<bh-header [id]="page.modalContent"></bh-header>
-<div fxLayout="row wrap" class="overlay_black" fxLayoutAlign="start stretch" [fxShow]="page.overlay" (click)="modalController(&apos;left&apos;,page.modalContent)"></div>
+<bh-header [id]="page.modalContent" (open)="riseUpgrade()"></bh-header>
+<div fxLayout="row wrap" class="overlay_black" fxLayoutAlign="start stretch" [fxShow]="page.overlay" (click)="modalController(&apos;close&apos;,page.modalContent)"></div>
 <div fxLayout="column wrap" style=" background-color: #F7F9FA;   margin-top: 0;     margin-right: 0;     margin-bottom: 0;     margin-left: 0;" fxLayoutAlign="start center" [fxShow]="true">
   <div fxLayout="column wrap" style="font-weight:500;color:#475973" class="container" fxLayoutAlign="start start" [fxShow]="true">
     <div fxLayout="row wrap" style="width:100%;padding-top:60px;" fxLayoutAlign="start center" [fxShow]="true" fxHide.gt-md="true">
@@ -81,18 +81,22 @@
         </div>
       </div>
     </div>
-    <div fxLayout="column wrap" fxLayoutAlign="start start" [fxShow]="true">
-      <h2 style="padding-top:10px" class="primary_color">
-        Premium Calculation</h2><span>
+    <div fxLayout="column wrap" style="width:100%" fxLayoutAlign="start start" [fxShow]="true">
+      <div fxLayout="row wrap" style="width:100%" fxLayoutAlign="space-between center" [fxShow]="true">
+        <h2 style="padding-top:10px" class="primary_color">
+          Premium Calculation</h2>
+        <div fxHide.lt-md="true" style="color:#218BC4">
+          Show comparison benefit table</div>
+      </div><span>
                 Please select one of our plans by selecting the premium card</span>
     </div>
     <div fxLayout="column wrap" class="insuring" fxLayoutAlign="center center" [fxShow]="true" [style.padding-top.px]="!page.insureModal?10:30" fxHide.gt-md="true">
       <div fxHide="{{!page.insureModal}}" style="width:30%;padding:4px;background-color:#00000014;border-radius:10px">
       </div>
-      <div (click)="insureUp()" style="padding-top:5px;color:#00000014">
-        <mat-icon style="color:#00000014;font-size:45px;width:50px" fxShow="{{page.insureModal}}">expand_more</mat-icon><mat-icon style="color:#00000014;font-size:45px;width:50px" fxHide="{{page.insureModal}}">expand_less</mat-icon>
+      <div (click)="insureUp()" style="padding-top:5px;color:#738194">
+        <mat-icon style="font-size:45px;width:50px" fxShow="{{page.insureModal}}">expand_more</mat-icon><mat-icon style="font-size:45px;width:50px" fxHide="{{page.insureModal}}">expand_less</mat-icon>
       </div>
-      <div fxLayout="column wrap" style="width: 100%;padding:5px" fxLayoutAlign="space-around space-around" [fxShow]="page.insureModal">
+      <div fxLayout="column wrap" style="width: 100%;padding:10px" fxLayoutAlign="space-around space-around" [fxShow]="page.insureModal">
         <div fxLayout="row wrap" style="width:85%;color:black;" fxLayoutAlign="space-between stretch" [fxShow]="true">
           <div fxLayout="row wrap" style="width:78%;font-weight:400" class="insurecard" fxLayoutAlign="start stretch" [fxShow]="true">
             <div style="font-weight:400">
@@ -142,9 +146,9 @@
           </div>
         </div>
       </div>
-      <div fxLayout="row wrap" style="width:90%;height:60px;background:#218BC4;border-radius:30px;padding:20px;margin-top:20px" fxLayoutAlign="space-between center" [fxShow]="true">
-        <div fxLayout="column wrap" style="padding:10px" fxLayoutAlign="start start" [fxShow]="true">
-          <div>
+      <div fxLayout="row wrap" style="width:90%;height:70px;background:#218BC4;border-radius:30px;padding:20px;margin-top:20px" fxLayoutAlign="space-between center" [fxShow]="true">
+        <div fxLayout="column wrap" style="padding:10px;font-weight:400" fxLayoutAlign="start start" [fxShow]="true">
+          <div style="font-weight:400">
             Total premium (smart)</div>
           <div style="font-size:15px">
             SAR <span style="font-weight:600;font-size:25px">1,000</span></div>
@@ -165,8 +169,10 @@
           </div>
           <div style="padding-top:10px;color:#00B1AB;font-size:20px;font-weight:600">
             Wafi Basic</div>
-          <div style="font-size:10px;font-weight:600;">
-            SAR <span style="font-size:24px;color:##144185;font-weight:600"> 950</span> &#xA0;SAR <span style="font-size:24px;color:#00B1AB;font-weight:600"> 950 </span></div>
+          <div style="position:relative;font-size:10px;font-weight:600;">
+            <div style="width:50%;top:15px" class="red_cross">
+            </div>SAR <span style="font-size:24px;color:##144185;font-weight:600"> 950</span> &#xA0;SAR <span style="font-size:24px;color:#00B1AB;font-weight:600"> 950</span> <span style="font-size:16px;color:#00B1AB;font-weight:600">+VAT</span>
+          </div>
           <div class="check_details_hole">
           </div>
           <div fxLayout="column wrap" style="width:90%" fxLayoutAlign="space-around center" [fxShow]="true" fxHide.lt-md="true">
@@ -216,7 +222,7 @@
       </div>
       <div fxLayout="column wrap" style="position:relative;background:#F7F9FA;height:auto;" fxFlex="32" fxLayoutAlign="start stretch" [fxShow]="true" fxFlex.lt-md="48">
         <div fxHide.lt-md="true" fxHide.md="true" style="background:orange;font-size:10px;display:flex;justify-content:center;align-items:center;color:#fff;z-index:10" class="horizontal_div">
-          POPULAR</div>
+          MOST POPULAR</div>
         <div fxLayout="column wrap" style="position:relative;background:white;border-radius:20px;height:auto;padding-top:10px;margin-top:10px;overflow: hidden;" fxLayoutAlign="space-between center" [fxShow]="true" [style.border]="page.modalContent==&apos;smart&apos;?&apos;solid 3px #009ADE&apos;:&apos;none&apos;">
           <div fxHide.gt-md="true" style="background:orange;font-size:10px;display:flex;justify-content:center;align-items:center;color:#fff" class="vertical_div">
             POPULAR</div>
@@ -225,8 +231,10 @@
           </div>
           <div style="color:#009ADE;font-size:20px;font-weight:600">
             Smart</div>
-          <div style="font-size:10px;font-weight:600;">
-            SAR <span style="font-size:24px;color:##144185;font-weight:600"> 1200</span> &#xA0;SAR <span style="font-size:24px;color:#009ADE;font-weight:600"> 1000 </span></div>
+          <div style="position:relative;font-size:10px;font-weight:600;">
+            <div style="width:50%;top:15px" class="red_cross">
+            </div>SAR <span style="font-size:24px;color:#144185;font-weight:600"> 1200</span> &#xA0;SAR <span style="font-size:24px;color:#009ADE;font-weight:600"> 1000 </span><span style="font-size:16px;color:#009ADE;font-weight:600">+VAT</span>
+          </div>
           <div class="check_details_hole">
           </div>
           <div fxLayout="column wrap" style="width:90%" fxLayoutAlign="space-around center" [fxShow]="true" fxHide.lt-md="true">
@@ -285,8 +293,10 @@
           </div>
           <div style="color:#144185;font-size:20px;font-weight:600">
             Comprehensive</div>
-          <div style="font-size:10px;font-weight:600">
-            SAR <span style="font-size:24px;color:##144185;font-weight:600"> 1300</span> &#xA0;SAR <span style="font-size:24px;color:#144185;font-weight:600"> 1170 </span></div>
+          <div style="position:relative;font-size:10px;font-weight:600">
+            <div style="width:50%;top:15px" class="red_cross">
+            </div>SAR <span style="font-size:24px;color:##144185;font-weight:600"> 1300</span> &#xA0;SAR <span style="font-size:24px;color:#144185;font-weight:600"> 1170 </span><span style="font-size:16px;color:#144185;font-weight:600">+VAT</span>
+          </div>
           <div class="check_details_hole">
           </div>
           <div fxLayout="column wrap" style="width:90%" fxLayoutAlign="space-around center" [fxShow]="true" fxHide.lt-md="true">
@@ -411,13 +421,17 @@
   </div>
 </div>
 <div fxLayout="column wrap" class="left_modal" fxLayoutAlign="start center" [fxShow]="true" fxShow.gt-md="{{page.leftModal}}" fxHide.lt-lg="true">
-  <div style="  position: absolute;   top: 5px;   right: 5px;   width: 25px;  height: 25px;background: gray;   border-radius: 50%;   display: flex;   justify-content: center;   align-items: center;   color: white;">
-    <mat-icon style="font-size:15px;padding-top:10px;padding-left:5px" (click)="modalController(&apos;left&apos;,page.modalContent)">close</mat-icon>
+  <div (click)="modalController(&apos;left&apos;,&apos;basic&apos;)" style="  position: absolute;   top: 5px;   right: 5px;   width: 25px;  height: 25px;background: gray;   border-radius: 50%;   display: flex;   justify-content: center;   align-items: center;   color: white;  z-index: 2000;">
+    <mat-icon>close</mat-icon>
   </div>
   <div fxLayout="column wrap" style="width:100%" class="left_hit_ani" fxLayoutAlign="center center" [fxShow]="page.modalContent==&apos;basic&apos;">
     <div fxLayout="column wrap" style="width:90%;margin-top:30px" fxLayoutAlign="start stretch" [fxShow]="true">
       <div style="font-size:25px;color:#00B1AB;font-weight:600">
         Wafi Basic</div>
+      <div style="position:relative;font-size:10px;font-weight:600;padding-top:10px">
+        <div class="red_cross">
+        </div>SAR <span style="font-size:24px;color:##144185;font-weight:600"> 950</span> &#xA0;SAR <span style="font-size:24px;color:#00B1AB;font-weight:600"> 750 </span>
+      </div>
     </div>
     <div fxLayout="row wrap" style="width:90%;height:35px;background:#EFF4F7;margin-top:10px;border-radius:15px;padding:5px" fxLayoutAlign="space-between center" [fxShow]="true">
       <div>
@@ -553,6 +567,10 @@
     <div fxLayout="column wrap" style="width:90%;margin-top:30px" fxLayoutAlign="start stretch" [fxShow]="true">
       <div style="font-size:25px;color:#19A8D3;font-weight:600">
         Wafi Smart</div>
+      <div style="position:relative;font-size:10px;font-weight:600;padding-top:10px">
+        <div class="red_cross">
+        </div>SAR <span style="font-size:24px;color:##144185;font-weight:600"> 1200</span> &#xA0;SAR <span style="font-size:24px;color:#19A8D3;font-weight:600"> 1000 </span>
+      </div>
     </div>
     <div fxLayout="row wrap" style="width:90%;height:35px;background:#EFF4F7;margin-top:10px;border-radius:15px;padding:5px" fxLayoutAlign="space-between center" [fxShow]="true">
       <div>
@@ -688,6 +706,10 @@
     <div fxLayout="column wrap" style="width:90%;margin-top:30px" fxLayoutAlign="start stretch" [fxShow]="true">
       <div style="font-size:25px;color:#144185;font-weight:600">
         Wafi Comprehensive</div>
+      <div style="position:relative;font-size:10px;font-weight:600;padding-top:10px">
+        <div class="red_cross">
+        </div>SAR <span style="font-size:24px;color:##144185;font-weight:600"> 1300</span> &#xA0;SAR <span style="font-size:24px;color:#144185;font-weight:600"> 1170 </span>
+      </div>
     </div>
     <div fxLayout="row wrap" style="width:90%;height:35px;background:#EFF4F7;margin-top:10px;border-radius:15px;padding:5px" fxLayoutAlign="space-between center" [fxShow]="true">
       <div>
@@ -852,8 +874,10 @@
       <div fxLayout="row wrap" style="width:100%" fxLayoutAlign="space-between stretch" [fxShow]="true">
         <div style="font-size:25px;color:#00B1AB;font-weight:600">
           Wafi Basic</div>
-        <div>
-          SAR <span style="font-size:20px;color:##144185;font-weight:600"> 950</span> &#xA0;SAR <span style="font-size:20px;color:#00B1AB;font-weight:600"> 950 </span></div>
+        <div style="position:relative">
+          <div style="width:50%;top:15px" class="red_cross">
+          </div>SAR <span style="font-size:20px;color:##144185;font-weight:600"> 950</span> &#xA0;SAR <span style="font-size:20px;color:#00B1AB;font-weight:600"> 950 </span>
+        </div>
       </div>
     </div>
     <div fxLayout="row wrap" style="width:90%;height:35px;background:#EFF4F7;margin-top:10px;border-radius:15px;padding:5px" fxLayoutAlign="space-between center" [fxShow]="true">
@@ -940,8 +964,10 @@
       <div fxLayout="row wrap" style="width:100%" fxLayoutAlign="space-between stretch" [fxShow]="true">
         <div style="font-size:25px;color:#00AAD8;font-weight:600">
           Wafi Smart</div>
-        <div>
-          SAR <span style="font-size:20px;color:#144185;font-weight:600"> 950</span> &#xA0;SAR <span style="font-size:20px;color:#00AAD8;font-weight:600"> 950 </span></div>
+        <div style="position:relative">
+          <div style="width:50%;top:15px" class="red_cross">
+          </div>SAR <span style="font-size:20px;color:#144185;font-weight:600"> 950</span> &#xA0;SAR <span style="font-size:20px;color:#00AAD8;font-weight:600"> 950 </span>
+        </div>
       </div>
     </div>
     <div fxLayout="row wrap" style="width:90%;height:35px;background:#EFF4F7;margin-top:10px;border-radius:15px;padding:5px" fxLayoutAlign="space-between center" [fxShow]="true">
@@ -1041,8 +1067,10 @@
       <div fxLayout="row wrap" style="width:100%" fxLayoutAlign="space-between stretch" [fxShow]="true">
         <div style="font-size:25px;color:#144185;font-weight:600">
           Wafi Comprehensive</div>
-        <div>
-          SAR <span style="font-size:20px;color:#144185;font-weight:600"> 950</span> &#xA0;SAR <span style="font-size:20px;color:#144185;font-weight:600"> 950 </span></div>
+        <div style="position:relative">
+          <div style="width:50%;top:15px" class="red_cross">
+          </div>SAR <span style="font-size:20px;color:#144185;font-weight:600"> 950</span> &#xA0;SAR <span style="font-size:20px;color:#144185;font-weight:600"> 950 </span>
+        </div>
       </div>
     </div>
     <div fxLayout="row wrap" style="width:90%;height:35px;background:#EFF4F7;margin-top:10px;border-radius:15px;padding:5px" fxLayoutAlign="space-between center" [fxShow]="true">
@@ -1135,6 +1163,40 @@
         Out-patient department costs</div>
       <div style="font-size: 14px;font-weight:400;color:#516684;padding-top:5px">
         Multi vehicle discount benefit</div>
+    </div>
+  </div>
+</div>
+<div fxLayout="column wrap" style="padding-top:20px;color:#475973;border:radius:20px" class="center_modal_close" fxLayoutAlign="center center" [fxShow]="page.centerModal">
+  <div fxLayout="column wrap" fxLayoutAlign="center center" fxHide="{{page.timing}}">
+    <div>
+      Get <span style="font-size:24px;font-weight:600 ;color:red"> 5% </span> discount</div>
+    <div style="padding-top:10px">
+      by upgrading to <span style="color:#218BC4"> Wafi Smart </span> coverage</div>
+    <div style="width:90%;text-align:center;padding-top:10px">
+      Lorem ipsum dolor sit amet ,sar 1000 adipiscing elit. Pellentesque viverra maximus imperdiet. Praesent sodales vestibulum mollis. </div>
+    <div style="padding-top:10px">
+      <button mat-button style="padding:8px 30px;background:#218BC4;border-radius:50px;color:#fff" (click)="upgrade()">Upgrade now</button>
+    </div>
+    <div style="padding-top:20px;  text-decoration: underline;color:#475973">
+      Skip and Insure</div>
+  </div>
+  <div fxLayout="column wrap" style="padding:20px;" fxLayoutAlign="center center" [fxShow]="page.timing">
+    <div fxLayout="column wrap" class="loader" fxLayoutAlign="center center" [fxShow]="page.timing">
+      <div style="transform:rotate(315deg);">
+        <div fxHide="{{page.upgrading}}" style="font-size:50px;font-wight:600;color:  #228BC4;    ">
+          <mat-icon style="padding-top:15px" [inline]="true">done</mat-icon>
+        </div>
+        <div fxHide="{{!page.upgrading}}">
+          {{page.counter}}%
+        </div>
+      </div>
+    </div>
+    <div style="padding-top:10px">
+      Upgraded successfully</div>
+    <div style="width:90%;text-align:center;padding-top:10px">
+      Your coverage has been upgraded to <span style="color:#218BC4"> Wafi Smart </span> successfully, the new premium updated to SAR1.000</div>
+    <div style="padding-top:10px">
+      <button mat-button style="padding:7px 70px;background:#218BC4;border-radius:50px;color:#fff" (click)="proceed()">Proceed</button>
     </div>
   </div>
 </div>

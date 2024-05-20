@@ -23,8 +23,8 @@
         "pageVariables": [],
         "functionName": "sd_tPQw1ZYUvNkaa0NL",
         "category": "Lifecycle Events",
-        "x": 30,
-        "y": 30,
+        "x": 45,
+        "y": 40,
         "wires": [
             [
                 "sd_vGm5AyHgi7KgsyyZ"
@@ -47,8 +47,8 @@
         "globalVariables": [],
         "functionName": "sd_vGm5AyHgi7KgsyyZ",
         "category": "Function",
-        "x": 180,
-        "y": 30,
+        "x": 185,
+        "y": 40,
         "wires": [
             [
                 "sd_oExKQDkOnt8mJjGF"
@@ -93,8 +93,8 @@
         "script": "\n\nif(page.insureModal==false){\n    page.insureModal=true \n    page.overlay=true\n}else{\n    page.insureModal=false \n    page.overlay=false\n\n}",
         "functionName": "sd_3uav6M1viC3WLmzu",
         "category": "Function",
-        "x": 200,
-        "y": 160,
+        "x": 185,
+        "y": 140,
         "wires": [
             []
         ],
@@ -110,7 +110,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "page.insureModal=false \npage.leftModal=false\npage.bottomModal=false\npage.modalContent='basic'\npage.overlay=false",
+        "script": "page.insureModal=false \npage.leftModal=false\npage.bottomModal=false\npage.modalContent='basic'\npage.overlay=false\n\npage.centerModal=false\npage.upgrade=false\npage.timing=false\npage.upgrading=true\npage.counter=0\n\n\n\nfunction toFloat(){\n    return Math.floor(page.counter).toString();\n}",
         "functionName": "sd_oExKQDkOnt8mJjGF",
         "category": "Function",
         "x": 305,
@@ -153,8 +153,8 @@
         "flow_type": "sync",
         "functionName": "modalController",
         "category": "General",
-        "x": 285,
-        "y": 160,
+        "x": 265,
+        "y": 140,
         "wires": [
             [
                 "sd_KViMFN3fLVMskZ68"
@@ -171,7 +171,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "let types=bh.input.types\nlet content=bh.input.content\n\nconsole.log(types,content)\npage.modalContent=content\n\n\nconst left =()=>{\n    if(!page.leftModal)\n {\n        page.leftModal=true\n        page.bottomModal=true\n\n    page.overlay=true\n    }\n    else {page.leftModal=false\n        page.bottomModal=false\n\n    page.overlay=false\n\n    \n    }\n}\nconst center =()=>{\n    if(!page.centerModal)\n    {page.overlay=true\n\n    page.centerModal=true}\n    else{ page.centerModal=false\n    page.overlay=false}\n}\n\nif(types==='left'){\n    left()\n}else if(types==='center'){\n    center()\n}\n\n",
+        "script": "let types=bh.input.types\nlet content=bh.input.content\n\nconsole.log(types,content)\npage.modalContent=content\n\n\n\nconst left =()=>{\n    if(!page.leftModal)\n {\n        page.leftModal=true\n        page.bottomModal=true\n\n    page.overlay=true\n    }\n    else {page.leftModal=false\n        page.bottomModal=false\n\n    page.overlay=false\n\n    \n    }\n}\nconst center =()=>{\n    if(!page.centerModal)\n    {page.overlay=true\n\n    page.centerModal=true}\n    else{ page.centerModal=false\n    page.overlay=false}\n}\n\nif(types==='left'){\n    left()\n}else if(types=='close'){\npage.overlay=false\npage.leftModal=false\npage.centerModal=false\npage.bottomModal=false\npage.insureModal=false\n}\n",
         "functionName": "sd_KViMFN3fLVMskZ68",
         "category": "Function",
         "x": 480,
@@ -197,8 +197,8 @@
         "flow_type": "sync",
         "functionName": "openModal",
         "category": "General",
-        "x": 60,
-        "y": 240,
+        "x": 45,
+        "y": 220,
         "wires": [
             [
                 "sd_pi4OYqzmmUDlzvI0"
@@ -215,11 +215,11 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "\n",
+        "script": "\nconsole.log('open')",
         "functionName": "sd_pi4OYqzmmUDlzvI0",
         "category": "Function",
-        "x": 220,
-        "y": 260,
+        "x": 185,
+        "y": 220,
         "wires": [
             []
         ],
@@ -250,8 +250,8 @@
         "flow_type": "sync",
         "functionName": "switchModalCnt",
         "category": "General",
-        "x": 80,
-        "y": 340,
+        "x": 85,
+        "y": 320,
         "wires": [
             [
                 "sd_09RIR1M40VmVl2Ce"
@@ -271,8 +271,149 @@
         "script": "page.modalContent=bh.input.content",
         "functionName": "sd_09RIR1M40VmVl2Ce",
         "category": "Function",
-        "x": 220,
-        "y": 360,
+        "x": 205,
+        "y": 320,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "homeComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_PqTnV0mBAgFwb1ey",
+        "type": "PageStart",
+        "z": "sd_wWomRIpOPlKqIc3T",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "riseUpgrade",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "open",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "riseUpgrade",
+        "category": "General",
+        "x": 325,
+        "y": 220,
+        "wires": [
+            [
+                "sd_IY16xYHT1tuTz823"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "homeComponent"
+    },
+    {
+        "id": "sd_IY16xYHT1tuTz823",
+        "type": "Script",
+        "z": "sd_wWomRIpOPlKqIc3T",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "// page.centerModal=false\n// page.upgrade=false\n// page.timing=false\nconsole.log(bh.input.open)\nif(!page.centerModal){\npage.centerModal=true\npage.overlay=true\n}else{\npage.centerModal=false\npage.overlay=false\n}",
+        "functionName": "sd_IY16xYHT1tuTz823",
+        "category": "Function",
+        "x": 405,
+        "y": 220,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "homeComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_LrdpBJPkO6ZnVlcU",
+        "type": "PageStart",
+        "z": "sd_wWomRIpOPlKqIc3T",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "upgrade",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "upgrade",
+        "category": "General",
+        "x": 325,
+        "y": 300,
+        "wires": [
+            [
+                "sd_PSUViJutHBh4gyY0"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "homeComponent"
+    },
+    {
+        "id": "sd_PSUViJutHBh4gyY0",
+        "type": "Script",
+        "z": "sd_wWomRIpOPlKqIc3T",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.timing=true\n \n let targetValue = [10,50,100];\n\n targetValue.map((v:any)=>{\n       setTimeout(()=>{\n       console.log(v)\n             page.counter=v\n             },300)\n       \n })\n \nsetTimeout(()=>{\npage.upgrading=false\n},1000)",
+        "functionName": "sd_PSUViJutHBh4gyY0",
+        "category": "Function",
+        "x": 465,
+        "y": 300,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "homeComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_ceEKMOV6j3RiEWRi",
+        "type": "PageStart",
+        "z": "sd_wWomRIpOPlKqIc3T",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "proceed",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "proceed",
+        "category": "General",
+        "x": 365,
+        "y": 380,
+        "wires": [
+            [
+                "sd_iwDUybU5pMhVbcwF"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "homeComponent"
+    },
+    {
+        "id": "sd_iwDUybU5pMhVbcwF",
+        "type": "Script",
+        "z": "sd_wWomRIpOPlKqIc3T",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.centerModal=false\npage.overlay=false\npage.timing=false\npage.upgrading=true\n\npage.counter=0",
+        "functionName": "sd_iwDUybU5pMhVbcwF",
+        "category": "Function",
+        "x": 545,
+        "y": 380,
         "wires": [
             []
         ],

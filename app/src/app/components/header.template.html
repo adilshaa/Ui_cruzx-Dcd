@@ -11,7 +11,7 @@
           <p>
             1</p>
         </div>
-        <div fxShow="{{page.content==&apos;basic&apos;}}" style="padding-left:10px;color:#218BC4">
+        <div style="padding-left:10px;color:#218BC4">
           Premium Calculation &amp; Quotation</div>
       </div>
       <div style="height:1px;background:#AEB8C7;width:50px;margin-left:9px">
@@ -42,7 +42,7 @@
     <div fxHide.lt-md="true" style=" border-left: 1px solid #0000000F; height: 60px; ">
     </div>
     <div>
-      <mat-icon>close</mat-icon>
+      <mat-icon (click)="openModal()">close</mat-icon>
     </div>
   </div>
 </div>

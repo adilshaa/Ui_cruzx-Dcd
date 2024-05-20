@@ -1,0 +1,535 @@
+[
+    {
+        "id": "sd_ETgxO1BIP3RcHyGT",
+        "type": "tab",
+        "createdDate": "2024-05-13T11:43:17.304Z",
+        "label": "pagination",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 3,
+        "generateNext": true,
+        "serviceName": "paginationComponent"
+    },
+    {
+        "id": "sd_daG46IeyumuEacuY",
+        "type": "OnInit",
+        "z": "sd_ETgxO1BIP3RcHyGT",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "inputVariables": [],
+        "localVariables": [],
+        "outputVariables": [],
+        "pageVariables": [
+            {
+                "key": "selected",
+                "defaultValue": {
+                    "type": "any",
+                    "value": "4"
+                }
+            }
+        ],
+        "functionName": "sd_daG46IeyumuEacuY",
+        "category": "Lifecycle Events",
+        "x": 65,
+        "y": 40,
+        "wires": [
+            [
+                "sd_h2hRWWjZBtrsMw99"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "paginationComponent"
+    },
+    {
+        "id": "sd_h2hRWWjZBtrsMw99",
+        "type": "PageVariables",
+        "z": "sd_ETgxO1BIP3RcHyGT",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_h2hRWWjZBtrsMw99",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            [
+                "sd_YljjIucV4q6l83fH",
+                "sd_f5KAdPPrHeMNj9HC"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "paginationComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_YljjIucV4q6l83fH",
+        "type": "Script",
+        "z": "sd_ETgxO1BIP3RcHyGT",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\npage.data=[\n { id: 1, name: \"John Doe\", age: 28, place: \"New York\" },\n  { id: 2, name: \"Jane Smith\", age: 34, place: \"Los Angeles\" },\n  { id: 3, name: \"Michael Johnson\", age: 45, place: \"Chicago\" },\n  { id: 4, name: \"Emily Davis\", age: 22, place: \"Houston\" },\n  { id: 5, name: \"Christopher Brown\", age: 30, place: \"Phoenix\" },\n  { id: 6, name: \"Amanda Wilson\", age: 27, place: \"Philadelphia\" },\n  { id: 7, name: \"Joshua Martinez\", age: 35, place: \"San Antonio\" },\n  { id: 8, name: \"Jessica Garcia\", age: 29, place: \"San Diego\" },\n  { id: 9, name: \"David Lee\", age: 41, place: \"Dallas\" },\n  { id: 10, name: \"Sarah Harris\", age: 33, place: \"San Jose\" },\n   { id: 11, name: \"John Doe\", age: 28, place: \"New York\" },\n  { id: 12, name: \"Jane Smith\", age: 34, place: \"Los Angeles\" },\n  { id: 13, name: \"Michael Johnson\", age: 45, place: \"Chicago\" },\n  { id: 14, name: \"Emily Davis\", age: 22, place: \"Houston\" },\n  { id: 15, name: \"Christopher Brown\", age: 30, place: \"Phoenix\" },\n  { id: 16, name: \"Amanda Wilson\", age: 27, place: \"Philadelphia\" },\n  { id: 17, name: \"Joshua Martinez\", age: 35, place: \"San Antonio\" },\n  { id: 18, name: \"Jessica Garcia\", age: 29, place: \"San Diego\" },\n  { id: 19, name: \"David Lee\", age: 41, place: \"Dallas\" },\n  { id: 20, name: \"Sarah Harris\", age: 33, place: \"San Jose\" }\n]\n\npage.currentPage = 1;\npage.itemsPerPage = 2;\npage.pageLimit=[5,10,20,30]\npage.displayedPages = [0, 1];  \npage.table;\npage.compPages=getPage()\npaginate();\n\npage.paginate=paginate\nconsole.log(page.selected)\n       console.log(page.data.length/page.selected,'divided')\n\n function paginate(){\n    page.compPages\n    \n\n    const startIndex = (page.currentPage - 1) *  page.selected;\n    const endIndex = startIndex +  page.selected;\n    page.table= new MatTableDataSource(page.data.slice(startIndex, endIndex))\n    \n     if(page.currentPage<page.compPages.length && page.currentPage>=2){\n    page.buttons=[page.currentPage-1,page.currentPage,page.currentPage+1]\n    }\n }\n\npage.totalPages=totalPages\n\nfunction totalPages() {\n    let total= Math.ceil(page.data.length /  page.selected);\n    return total\n  }\n\n\n function  getPage() {\n    return Array.from({ length: totalPages() }, (_, index) => index + 1);\n}\n\n//  skip Pages\n\npage.buttons=[page.currentPage,page.currentPage+1,page.currentPage+2]\n\nconsole.log(page.buttons)",
+        "functionName": "sd_YljjIucV4q6l83fH",
+        "category": "Function",
+        "x": 285,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "paginationComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_4vfoahczLi31hVAF",
+        "type": "PageStart",
+        "z": "sd_ETgxO1BIP3RcHyGT",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "onNext",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "onNext",
+        "category": "General",
+        "x": 205,
+        "y": 320,
+        "wires": [
+            [
+                "sd_9CwxRi7ioUJNCcjc"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "paginationComponent"
+    },
+    {
+        "id": "sd_9CwxRi7ioUJNCcjc",
+        "type": "Script",
+        "z": "sd_ETgxO1BIP3RcHyGT",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\n\n \n if (page.currentPage < page.totalPages()) {\n    page.currentPage++;\n   //  if(page.currentPage<page.compPages.length && page.currentPage>=2){\n   //  page.buttons=[page.currentPage-1,page.currentPage,page.currentPage+1]\n\n   //  }\n\n \n   page.paginate()\n    }",
+        "functionName": "sd_9CwxRi7ioUJNCcjc",
+        "category": "Function",
+        "x": 325,
+        "y": 320,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "paginationComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_gjdpa3ZEWeg4FQ3N",
+        "type": "PageStart",
+        "z": "sd_ETgxO1BIP3RcHyGT",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "onPreviouse",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "onPreviouse",
+        "category": "General",
+        "x": 185,
+        "y": 400,
+        "wires": [
+            [
+                "sd_aDpBdYeDpv2Bkg9C"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "paginationComponent"
+    },
+    {
+        "id": "sd_aDpBdYeDpv2Bkg9C",
+        "type": "Script",
+        "z": "sd_ETgxO1BIP3RcHyGT",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": " \n\n \n  if (page.currentPage > 1) {\n  page.currentPage--;\n    // if(page.currentPage<page.compPages.length && page.currentPage>=2){\n    // page.buttons=[page.currentPage-1,page.currentPage,page.currentPage+1]\n    // }\n \n   page.paginate()\n\n    }",
+        "functionName": "sd_aDpBdYeDpv2Bkg9C",
+        "category": "Function",
+        "x": 345,
+        "y": 420,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "paginationComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_O7wiyGTHXpjaOo5P",
+        "type": "PageStart",
+        "z": "sd_ETgxO1BIP3RcHyGT",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "onPageChanges",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "page",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "onPageChanges",
+        "category": "General",
+        "x": 205,
+        "y": 200,
+        "wires": [
+            [
+                "sd_zJZOABnbMFSVy3PH"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "paginationComponent"
+    },
+    {
+        "id": "sd_zJZOABnbMFSVy3PH",
+        "type": "Script",
+        "z": "sd_ETgxO1BIP3RcHyGT",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": " let pages=bh.input.page\n    page.currentPage = pages;\n    if(page.currentPage<page.compPages.length && page.currentPage>=2){\n    page.buttons=[page.currentPage-1,page.currentPage,page.currentPage+1]\n    }\n    page.paginate()",
+        "functionName": "sd_zJZOABnbMFSVy3PH",
+        "category": "Function",
+        "x": 345,
+        "y": 200,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "paginationComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_lvIZLaoGcMhted5T",
+        "type": "PageStart",
+        "z": "sd_ETgxO1BIP3RcHyGT",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "setLimit",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "setLimit",
+        "category": "General",
+        "x": 45,
+        "y": 120,
+        "wires": [
+            [
+                "sd_upDFi5NxbnvfQdJP"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "paginationComponent"
+    },
+    {
+        "id": "sd_upDFi5NxbnvfQdJP",
+        "type": "Script",
+        "z": "sd_ETgxO1BIP3RcHyGT",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.itemsPerPage=page.selected \nconsole.log(page.itemsPerPage)\npage.paginate()\n\n",
+        "functionName": "sd_upDFi5NxbnvfQdJP",
+        "category": "Function",
+        "x": 160,
+        "y": 120,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "paginationComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_ur0vVc2Wk1mWvY1p",
+        "type": "PageStart",
+        "z": "sd_ETgxO1BIP3RcHyGT",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "search",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "query",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "search",
+        "category": "General",
+        "x": 585,
+        "y": 340,
+        "wires": [
+            [
+                "sd_0db6YkM5PfnYCGaV"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "paginationComponent"
+    },
+    {
+        "id": "sd_0db6YkM5PfnYCGaV",
+        "type": "Script",
+        "z": "sd_ETgxO1BIP3RcHyGT",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "const target = bh.input.query.target as HTMLInputElement;\nconsole.log(target.value)\nlet query=target.value\n\nfunction constructRegexPattern(input) {\n\nconst escapedInput = input.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&');\n  // Create a pattern that matches the input string exactly, case-insensitively\n  return new RegExp(escapedInput, 'i');\n}\n\nfunction searchNames(input:any,) {\n  page.paginate()\n  let names=page.table?.filteredData\n  const regex = constructRegexPattern(input);\n  // console.log('reg',regex)\n  let matchingNames= names?.filter(name=>   regex.test(name.name));\n   page.table=new MatTableDataSource( matchingNames)\n\n} \n\nsearchNames(query );\n",
+        "functionName": "sd_0db6YkM5PfnYCGaV",
+        "category": "Function",
+        "x": 705,
+        "y": 360,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "paginationComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_U4xZPki5KdQSAVde",
+        "type": "PageStart",
+        "z": "sd_ETgxO1BIP3RcHyGT",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "toggleOption",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "option",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "toggleOption",
+        "category": "General",
+        "x": 785,
+        "y": 60,
+        "wires": [
+            [
+                "sd_7RCC5LYaiuMw4jsL"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "paginationComponent"
+    },
+    {
+        "id": "sd_7RCC5LYaiuMw4jsL",
+        "type": "Script",
+        "z": "sd_ETgxO1BIP3RcHyGT",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.input.option)\nlet obj=bh.input.option\npage.primaryOptions.map((ite)=>{\n    if(ite.value===obj.value){\n        if(ite.status==false){\n   return ite.status=true\n\n        }else{\n    ite.status=false\n        }\n    }\n   return ite\n    })\n\n    console.log(page.primaryOptions)",
+        "functionName": "sd_7RCC5LYaiuMw4jsL",
+        "category": "Function",
+        "x": 1025,
+        "y": 60,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "paginationComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_91xpqbqUqrn7cr4w",
+        "type": "PageStart",
+        "z": "sd_ETgxO1BIP3RcHyGT",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "filterMenu",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "query",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "option",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "filterMenu",
+        "category": "General",
+        "x": 765,
+        "y": 160,
+        "wires": [
+            [
+                "sd_x1dsMdnXBwdjEd4H"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "paginationComponent"
+    },
+    {
+        "id": "sd_x1dsMdnXBwdjEd4H",
+        "type": "Script",
+        "z": "sd_ETgxO1BIP3RcHyGT",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "let event =bh.input.event\n\n  event.stopPropagation()\n  console.log(event)",
+        "functionName": "sd_x1dsMdnXBwdjEd4H",
+        "category": "Function",
+        "x": 920,
+        "y": 160,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "paginationComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_f5KAdPPrHeMNj9HC",
+        "type": "Script",
+        "z": "sd_ETgxO1BIP3RcHyGT",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\npage.primaryOptions = [\n  {\n    value: 'electronics',\n    status: false,\n    secondaryOptions: {\n      name: 'Electronics',\n      options: ['Smartphones', 'Laptops', 'Tablets']\n    }\n  },\n  {\n    value: 'clothing',\n    status: false,\n    secondaryOptions: {\n      name: 'Clothing',\n      options: ['Men', 'Women', 'Children']\n    }\n  },\n  {\n    value: 'home-appliances',\n    status: false,\n    secondaryOptions: {\n      name: 'Home Appliances',\n      options: ['Refrigerators', 'Washing Machines', 'Microwaves']\n    }\n  }\n];\n\n\n\npage.hiddenDivs= {\n    name: true,  \n    id: false , \n};\npage.searchQuery=''\n",
+        "functionName": "sd_f5KAdPPrHeMNj9HC",
+        "category": "Function",
+        "x": 285,
+        "y": 120,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "paginationComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_jLq2XWvyKT9TXscq",
+        "type": "PageStart",
+        "z": "sd_ETgxO1BIP3RcHyGT",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "filterClose",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "div",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "filterClose",
+        "category": "General",
+        "x": 765,
+        "y": 260,
+        "wires": [
+            [
+                "sd_65Z0hJNK9zgBUPv4"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "paginationComponent"
+    },
+    {
+        "id": "sd_65Z0hJNK9zgBUPv4",
+        "type": "Script",
+        "z": "sd_ETgxO1BIP3RcHyGT",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "let div =bh.input.div\nconsole.log(div)\npage.hiddenDivs[div] = !page.hiddenDivs[div];\n",
+        "functionName": "sd_65Z0hJNK9zgBUPv4",
+        "category": "Function",
+        "x": 900,
+        "y": 260,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "paginationComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_Jc6p3uqjr9i7OEQg",
+        "type": "Script",
+        "z": "sd_ETgxO1BIP3RcHyGT",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "",
+        "functionName": "sd_Jc6p3uqjr9i7OEQg",
+        "category": "Function",
+        "x": 485,
+        "y": 160,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "paginationComponent"
+    }
+]

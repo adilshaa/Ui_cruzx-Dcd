@@ -5,6 +5,14 @@
             "component": "homeComponent"
         },
         {
+            "component": "paginationComponent",
+            "path": "page"
+        },
+        {
+            "path": "table",
+            "component": "tabletestComponent"
+        },
+        {
             "path": "''",
             "redirectTo": "home",
             "pathMatch": "full",

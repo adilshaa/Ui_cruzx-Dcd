@@ -3,7 +3,7 @@
 //CORE_REFERENCE_IMPORTS
 //append_imports_start
 
-import { Component, Injector, Input } from '@angular/core'; //_splitter_
+import { Component, EventEmitter, Injector, Output } from '@angular/core'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { NeuServiceInvokerService } from 'app/n-services/service-caller.service'; //_splitter_
@@ -17,8 +17,8 @@ import { NeuServiceInvokerService } from 'app/n-services/service-caller.service'
   ],
 })
 export class headerComponent {
-  @Input('id')
-  public id: any = undefined;
+  @Output('open')
+  public open: any = new EventEmitter<any>();
   page: any = { dep: {} };
   constructor(
     private __page_injector__: Injector,
@@ -57,6 +57,20 @@ export class headerComponent {
     }
   }
 
+  openModal(...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = {};
+      bh.local = {};
+      bh = this.sd_2xv0op0RKlNu2sIv(bh);
+      //appendnew_next_openModal
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_IVgTuUemzNzQC5mA');
+    }
+  }
   //appendnew_flow_headerComponent_start
 
   sd_UFTTAKBm8QND1tMF(bh) {
@@ -72,13 +86,35 @@ export class headerComponent {
 
   sd_l4qKEgiZ3IgxCE4n(bh) {
     try {
-      const page = this.page;
-      page.content = page.id.id;
-      console.log(page.content);
+      const page = this.page; // page.content=page.id.id
+      // // console.log(page.content)
       //appendnew_next_sd_l4qKEgiZ3IgxCE4n
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_l4qKEgiZ3IgxCE4n');
+    }
+  }
+
+  sd_2xv0op0RKlNu2sIv(bh) {
+    try {
+      const page = this.page;
+      bh.local.id = '1';
+      // console.log(bh.input.id)
+      bh = this.sd_Rq4JVdgcXegy3eVC(bh);
+      //appendnew_next_sd_2xv0op0RKlNu2sIv
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_2xv0op0RKlNu2sIv');
+    }
+  }
+
+  sd_Rq4JVdgcXegy3eVC(bh) {
+    try {
+      bh.pageOutput.open.emit(bh.local.id);
+      //appendnew_next_sd_Rq4JVdgcXegy3eVC
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_Rq4JVdgcXegy3eVC');
     }
   }
 

@@ -1,0 +1,537 @@
+[
+    {
+        "id": "sd_auKcSf0cyB9oTCWZ",
+        "type": "tab",
+        "createdDate": "2024-05-17T09:58:57.179Z",
+        "label": "tabletest",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "tabletestComponent"
+    },
+    {
+        "id": "sd_ZXhgjJg36nRYoisK",
+        "type": "OnInit",
+        "z": "sd_auKcSf0cyB9oTCWZ",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "inputVariables": [],
+        "localVariables": [],
+        "outputVariables": [],
+        "pageVariables": [
+            {
+                "key": "selected",
+                "defaultValue": {
+                    "type": "any",
+                    "value": "5"
+                }
+            }
+        ],
+        "functionName": "sd_ZXhgjJg36nRYoisK",
+        "category": "Lifecycle Events",
+        "x": 65,
+        "y": 40,
+        "wires": [
+            [
+                "sd_ry2V9rkovjVNXc79"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "tabletestComponent"
+    },
+    {
+        "id": "sd_ry2V9rkovjVNXc79",
+        "type": "PageVariables",
+        "z": "sd_auKcSf0cyB9oTCWZ",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_ry2V9rkovjVNXc79",
+        "category": "Function",
+        "x": 185,
+        "y": 40,
+        "wires": [
+            [
+                "sd_Vhx4J0wIG4052L5N",
+                "sd_JlnZlrE1e9lbcJxH",
+                "sd_ztuvV2zpVoX22hUS"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "tabletestComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_PZiyxJOGy1bHX1JP",
+        "type": "PageStart",
+        "z": "sd_auKcSf0cyB9oTCWZ",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "onNext",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "onNext",
+        "category": "General",
+        "x": 245,
+        "y": 300,
+        "wires": [
+            [
+                "sd_irJzwAGH1C8R5Y5V"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "tabletestComponent"
+    },
+    {
+        "id": "sd_irJzwAGH1C8R5Y5V",
+        "type": "Script",
+        "z": "sd_auKcSf0cyB9oTCWZ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\n\n if (page.currentPage < page.totalPages(page.catchData.length-1,page.itemsPerPage)) {\n    page.currentPage++;\n   page.paginate(page.catchData)\n  \n    }",
+        "functionName": "sd_irJzwAGH1C8R5Y5V",
+        "category": "Function",
+        "x": 365,
+        "y": 300,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "tabletestComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_WhJvQ4DFY1w3K5rX",
+        "type": "PageStart",
+        "z": "sd_auKcSf0cyB9oTCWZ",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "onPreviouse",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "onPreviouse",
+        "category": "General",
+        "x": 225,
+        "y": 400,
+        "wires": [
+            [
+                "sd_b96OwxVUI6DSxhPD"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "tabletestComponent"
+    },
+    {
+        "id": "sd_b96OwxVUI6DSxhPD",
+        "type": "Script",
+        "z": "sd_auKcSf0cyB9oTCWZ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": " \n\n \n  if (page.currentPage > 1) {\n  page.currentPage--;\n     page.paginate(page.catchData)\n\n    }",
+        "functionName": "sd_b96OwxVUI6DSxhPD",
+        "category": "Function",
+        "x": 385,
+        "y": 420,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "tabletestComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_EwmagRREHNfEFNDw",
+        "type": "PageStart",
+        "z": "sd_auKcSf0cyB9oTCWZ",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "onPageChanges",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "page",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "onPageChanges",
+        "category": "General",
+        "x": 185,
+        "y": 200,
+        "wires": [
+            [
+                "sd_C8e2CpU7rgktKVMD"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "tabletestComponent"
+    },
+    {
+        "id": "sd_C8e2CpU7rgktKVMD",
+        "type": "Script",
+        "z": "sd_auKcSf0cyB9oTCWZ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": " let pages=bh.input.page\n    page.currentPage = pages;\n    page.paginate(page.catchData)",
+        "functionName": "sd_C8e2CpU7rgktKVMD",
+        "category": "Function",
+        "x": 345,
+        "y": 200,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "tabletestComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_GCJ6ZZHD6uXPxDzl",
+        "type": "PageStart",
+        "z": "sd_auKcSf0cyB9oTCWZ",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "setLimit",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "setLimit",
+        "category": "General",
+        "x": 85,
+        "y": 120,
+        "wires": [
+            [
+                "sd_SGWikVejEFtMo50G"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "tabletestComponent"
+    },
+    {
+        "id": "sd_SGWikVejEFtMo50G",
+        "type": "Script",
+        "z": "sd_auKcSf0cyB9oTCWZ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.itemsPerPage=page.selected \n   if(page.compPages.length>=1){\n    page.currentPage=1\npage.paginate(page.catchData)\n    }\n",
+        "functionName": "sd_SGWikVejEFtMo50G",
+        "category": "Function",
+        "x": 200,
+        "y": 120,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "tabletestComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_Vhx4J0wIG4052L5N",
+        "type": "Script",
+        "z": "sd_auKcSf0cyB9oTCWZ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\npage.primaryOptions = [\n  {\n    value: 'electronics',\n    status: false,\n    secondaryOptions: {\n      name: 'Electronics',\n      options: ['Smartphones', 'Laptops', 'Tablets']\n    }\n  },\n  {\n    value: 'clothing',\n    status: false,\n    secondaryOptions: {\n      name: 'Clothing',\n      options: ['Men', 'Women', 'Children']\n    }\n  },\n  {\n    value: 'home-appliances',\n    status: false,\n    secondaryOptions: {\n      name: 'Home Appliances',\n      options: ['Refrigerators', 'Washing Machines', 'Microwaves']\n    }\n  }\n];\n\n\n\npage.hiddenDivs= {\n    name: true,  \n    id: false , \n};\npage.searchQuery=''\n",
+        "functionName": "sd_Vhx4J0wIG4052L5N",
+        "category": "Function",
+        "x": 285,
+        "y": 140,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "tabletestComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_ZkVgfQ2I9JQcui6v",
+        "type": "PageStart",
+        "z": "sd_auKcSf0cyB9oTCWZ",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "search",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "query",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "search",
+        "category": "General",
+        "x": 485,
+        "y": 320,
+        "wires": [
+            [
+                "sd_XCH7wRBP6AT8rfoo"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "tabletestComponent"
+    },
+    {
+        "id": "sd_XCH7wRBP6AT8rfoo",
+        "type": "Script",
+        "z": "sd_auKcSf0cyB9oTCWZ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "const target = bh.input.query.target as HTMLInputElement;\nlet query=target.value\npage.searchQuery=target.value\nfunction constructRegexPattern(input) {\n\nconst escapedInput = input.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&');\n  // Create a pattern that matches the input string exactly, case-insensitively\n  return new RegExp(escapedInput, 'i');\n}\n\nfunction searchNames(input:any,) {\n    page.paginate(page.catchData)\n  //  const startIndex = (page.currentPage - 1) *  page.itemsPerPage;\n  //  const endIndex = startIndex +  page.itemsPerPage;\n   let names= page.data\n   \n  const regex = constructRegexPattern(input);\n  // console.log('reg',regex)\n  let matchingNames= names?.filter(name=>   regex.test(name.name));\n   page.catchData=matchingNames\n    if(page.compPages.length>=1){\n    page.currentPage=1\n    }\n    page.paginate(page.catchData)\n  //  console.log(page.compPages)\n}\n\nsearchNames(query );\n",
+        "functionName": "sd_XCH7wRBP6AT8rfoo",
+        "category": "Function",
+        "x": 605,
+        "y": 340,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "tabletestComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_VcJFX11VckhLgiPB",
+        "type": "PageStart",
+        "z": "sd_auKcSf0cyB9oTCWZ",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "toggleOption",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "option",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "toggleOption",
+        "category": "General",
+        "x": 685,
+        "y": 40,
+        "wires": [
+            [
+                "sd_9hjRrQmr2fRfTjdu"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "tabletestComponent"
+    },
+    {
+        "id": "sd_9hjRrQmr2fRfTjdu",
+        "type": "Script",
+        "z": "sd_auKcSf0cyB9oTCWZ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.input.option)\nlet obj=bh.input.option\npage.primaryOptions.map((ite)=>{\n    if(ite.value===obj.value){\n        if(ite.status==false){\n   return ite.status=true\n\n        }else{\n    ite.status=false\n        }\n    }\n   return ite\n    })\n\n    console.log(page.primaryOptions)",
+        "functionName": "sd_9hjRrQmr2fRfTjdu",
+        "category": "Function",
+        "x": 925,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "tabletestComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_8wpmTmRd4cilC5Zo",
+        "type": "PageStart",
+        "z": "sd_auKcSf0cyB9oTCWZ",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "filterMenu",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "query",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "option",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "filterMenu",
+        "category": "General",
+        "x": 705,
+        "y": 120,
+        "wires": [
+            [
+                "sd_w3ej76zS9a7IFaAr"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "tabletestComponent"
+    },
+    {
+        "id": "sd_w3ej76zS9a7IFaAr",
+        "type": "Script",
+        "z": "sd_auKcSf0cyB9oTCWZ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "let event =bh.input.event\n\n  event.stopPropagation()\n  console.log(event)",
+        "functionName": "sd_w3ej76zS9a7IFaAr",
+        "category": "Function",
+        "x": 860,
+        "y": 120,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "tabletestComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_m0syyhM1VerOxvbP",
+        "type": "PageStart",
+        "z": "sd_auKcSf0cyB9oTCWZ",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "filterClose",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "div",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "filterClose",
+        "category": "General",
+        "x": 705,
+        "y": 220,
+        "wires": [
+            [
+                "sd_rQs37J0PRMx9M3b1"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "tabletestComponent"
+    },
+    {
+        "id": "sd_rQs37J0PRMx9M3b1",
+        "type": "Script",
+        "z": "sd_auKcSf0cyB9oTCWZ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "let div =bh.input.div\nconsole.log(div)\npage.hiddenDivs[div] = !page.hiddenDivs[div];\n",
+        "functionName": "sd_rQs37J0PRMx9M3b1",
+        "category": "Function",
+        "x": 840,
+        "y": 220,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "tabletestComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_JlnZlrE1e9lbcJxH",
+        "type": "Script",
+        "z": "sd_auKcSf0cyB9oTCWZ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\npage.data=[\n { id: 1, name: \"John Doe\", age: 28, place: \"New York\" },\n { id: 1, name: \"John Doe\", age: 28, place: \"New York\" },\n { id: 1, name: \"John Doe\", age: 28, place: \"New York\" },\n\n { id: 1, name: \"John Doe\", age: 28, place: \"New York\" },\n\n { id: 1, name: \"John Doe\", age: 28, place: \"New York\" },\n\n { id: 1, name: \"John Doe\", age: 28, place: \"New York\" },\n\n { id: 1, name: \"John Doe\", age: 28, place: \"New York\" },\n\n\n\n { id: 1, name: \"John Doe\", age: 28, place: \"New York\" },\n\n { id: 1, name: \"John Doe\", age: 28, place: \"New York\" },\n\n { id: 1, name: \"John Doe\", age: 28, place: \"New York\" },\n\n { id: 1, name: \"John Doe\", age: 28, place: \"New York\" },\n\n  { id: 2, name: \"Jane Smith\", age: 34, place: \"Los Angeles\" },\n  { id: 3, name: \"Michael Johnson\", age: 45, place: \"Chicago\" },\n  { id: 4, name: \"Emily Davis\", age: 22, place: \"Houston\" },\n  { id: 5, name: \"Christopher Brown\", age: 30, place: \"Phoenix\" },\n  { id: 6, name: \"Amanda Wilson\", age: 27, place: \"Philadelphia\" },\n  { id: 7, name: \"Joshua Martinez\", age: 35, place: \"San Antonio\" },\n  { id: 15, name: \"Christopher Brown\", age: 30, place: \"Phoenix\" },\n  { id: 16, name: \"Amanda Wilson\", age: 27, place: \"Philadelphia\" },\n  { id: 17, name: \"Joshua Martinez\", age: 35, place: \"San Antonio\" },\n  { id: 18, name: \"Jessica Garcia\", age: 29, place: \"San Diego\" },\n  { id: 19, name: \"David Lee\", age: 41, place: \"Dallas\" },\n  { id: 20, name: \"Sarah Harris\", age: 33, place: \"San Jose\" },\n  { id: 9, name: \"David Lee\", age: 41, place: \"Dallas\" },\n  { id: 10, name: \"Sarah Harris\", age: 33, place: \"San Jose\" },\n   { id: 11, name: \"John Doe\", age: 28, place: \"New York\" },\n  { id: 12, name: \"Jane Smith\", age: 34, place: \"Los Angeles\" },\n  { id: 13, name: \"Michael Johnson\", age: 45, place: \"Chicago\" },\n  { id: 14, name: \"Emily Davis\", age: 22, place: \"Houston\" }\n]\n\n\npage.pageLimit=[5,10,20,30]\npage.table;\npage.compPages\npage.currentPage = 1;\npage.itemsPerPage = page.selected;\n\n//  function paginate(){\n//     const startIndex = (page.currentPage - 1) *  page.itemsPerPage;\n//     const endIndex = startIndex +  page.itemsPerPage;\n//     page.table= new MatTableDataSource(page.data.slice(startIndex, endIndex))\n//     page.compPages=getPage(page.data.length,page.table.filteredData.length)\n   \n//  }\n\n\n\n//  skip Pages\n\n\n",
+        "functionName": "sd_JlnZlrE1e9lbcJxH",
+        "category": "Function",
+        "x": 305,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "tabletestComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_ztuvV2zpVoX22hUS",
+        "type": "Script",
+        "z": "sd_auKcSf0cyB9oTCWZ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.paginate=paginate\npage.totalPages=totalPages\npage.getPage=getPage\npage.catchData=[]\npaginate(page.data)\n function paginate(data:any){\n   \n    const startIndex = (page.currentPage - 1) *  page.itemsPerPage;\n    const endIndex = startIndex +  page.itemsPerPage;\n    page.table= new MatTableDataSource(data.slice(startIndex, endIndex))\n    page.catchData=data\n    page.compPages=getPage(data.length,page.itemsPerPage)\n    console.log( page.compPages.length,'total')\n   \n }\n \nfunction totalPages(actualArray,filterdData) {\n\n   let length=actualArray/filterdData\n    let total= Math.ceil(length);\n    return total\n  }\n  \n function  getPage(actualArray,filterdData) {\n  //  console.log(actualArray,filterdData)\n   //  page.compPages=Array.from({ length: totalPages() }, (_, index) => index + 1);\n    return Array.from({ length: totalPages(actualArray,filterdData) }, (_, index) => index + 1);\n}\n\n",
+        "functionName": "sd_ztuvV2zpVoX22hUS",
+        "category": "Function",
+        "x": 425,
+        "y": 120,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "tabletestComponent",
+        "generated": true
+    }
+]

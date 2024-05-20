@@ -48,6 +48,7 @@ body{
         text-align: center;
         padding-bottom: 10px;
         z-index: 1000;
+        box-shadow: 0px 1px 2px rgb(202, 200, 200);
 }
 
 .overlay_black {
@@ -89,6 +90,7 @@ body{
   transform-origin: top right;
   transform: rotate(45deg);
 }
+
 .horizontal_div{
     position: absolute;
   background: #ffff;
@@ -101,6 +103,16 @@ body{
 
 }
 
+.mat-form-field {
+  /* Targeting all div elements inside mat-form-field */
+  div {
+    background-color: initial;
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+  }
+}
 
 .dash{
     border-bottom-style: dashed;
@@ -121,8 +133,26 @@ width:100%;margin:0;
   transition: right 0.3s ease; /* Smooth transition for modal movement */
   z-index: 1000;
   overflow: hidden;
-    //   overflow-y: auto; /* or overflow-y: scroll; */
-    //   border: 1px solid #ccc;
+
+}
+.center_modal_close{
+
+      position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+//   height: 347px;
+  max-width: 90%; /* Ensure modal doesn't exceed 90% of viewport width */
+  max-height: 90%; /* Ensure modal doesn't exceed 90% of viewport height */
+  background-color:white;
+  box-shadow: 0 0 10px var(--secondary-color);
+  transition: transform 0.3s ease; /* Smooth transition for modal movement */
+  z-index: 1000;
+  overflow: hidden;
+  padding-top:20px;
+  color:#475973;
+  border-radius:20px
 }
 
 .bottom_modal {
@@ -186,8 +216,108 @@ width:100%;margin:0;
     color:#144185;
   
 }
+.red_cross{
+    position:absolute;width:15%;padding:1px;background:#FF0000; transform-origin: top bottom;   transform: rotate(160deg);top:30px
+}
+
+.loader {
+  width: 100px;
+  height: 100px;
+//   position: relative;
+}
+.select-btn{
+    padding:0px 20px;border:solid .1px #E7EDF0;border-radius:4px;color:#AEB8C7
+}
+
+::ng-deep .mat-form-field.mat-primary {
+  background-color: red; /* Example of changing the background color */
+}
+.loader {
+   width: 100px;
+      height: 100px;
+      border:10px solid #FFF;
+      border-radius: 50%;
+    //   position: relative;
+      transform:rotate(45deg);
+      box-sizing: border-box;
+
+    }
+    .loader::before {
+      content: "";
+      position: absolute;
+      box-sizing: border-box;
+      inset:-10px;
+      border-radius: 50%;
+      border:10px solid #228BC4;
+      clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0);
+      animation: prixClipFix .5s  linear;
+    }
+     .loader::after{
+           content: "";
+      position: absolute;
+      box-sizing: border-box;
+      inset:-10px;
+      border-radius: 50%;
+      border:10px solid #228BC4;
+      clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0);
+      animation: prixClipFix .5s  linear;
+     }
 
 
+.round-button {
+ background-color: #F7F9FA; /* Green background */
+    border: none; /* Remove borders */
+    color: #218BC4; /* White text */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* Remove underline */
+    font-size: 16px; /* Increase font size */
+    cursor: pointer; /* Pointer/hand icon on hover */
+    border-radius: 50px; /* Rounded border */
+    width: 50px; /* Button width */
+    height: 50px; /* Button height */;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cdk-overlay-pane {
+    position: absolute;
+    pointer-events: auto;
+    box-sizing: border-box;
+    z-index: 1000;
+    display: flex;
+    max-width: 100%;
+    max-height: 100%;
+    min-width: 200px;
+    font-size: 16px;
+    top: 322.5px;
+    left: 944.922px;
+    transform: translateX(-40px) translateY(-15px);
+}
+
+.filter_menu{
+
+   margin-left: 44px;
+   margin-top: 50px;
+
+    width: 400px;
+    background-color: #fff;
+    box-shadow: 0px 2px 4px rgb(212, 211, 211);
+    color: black;
+    height: auto;
+}
+
+
+
+    @keyframes prixClipFix {
+        0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
+        25%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
+        50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+        75%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%)}
+        100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
+    }
+      
+      
 @keyframes slideInAndHit {
   0% {
     transform: translateX(-100%);

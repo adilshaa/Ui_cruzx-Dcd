@@ -10,14 +10,23 @@
         "check_details_hole",
         "vertical_div",
         "horizontal_div",
+        "mat-form-field",
         "dash",
         "left_modal",
+        "center_modal_close",
         "bottom_modal",
         "left_hit_ani",
         "horizontal-scroller",
         "scroll-card",
         "coverage_basic_btn",
         "coverage_smart_btn",
-        "coverage_comp_btn"
+        "coverage_comp_btn",
+        "red_cross",
+        "loader",
+        "select-btn",
+        "mat-primary",
+        "round-button",
+        "cdk-overlay-pane",
+        "filter_menu"
     ]
 }

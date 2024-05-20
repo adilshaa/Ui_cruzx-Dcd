@@ -114,6 +114,51 @@ export class homeComponent {
       return this.errorHandler(bh, e, 'sd_HSPqSdfJVauXoM2l');
     }
   }
+
+  riseUpgrade(open: any = undefined, ...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = { open };
+      bh.local = {};
+      bh = this.sd_IY16xYHT1tuTz823(bh);
+      //appendnew_next_riseUpgrade
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_PqTnV0mBAgFwb1ey');
+    }
+  }
+
+  upgrade(...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = {};
+      bh.local = {};
+      bh = this.sd_PSUViJutHBh4gyY0(bh);
+      //appendnew_next_upgrade
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_LrdpBJPkO6ZnVlcU');
+    }
+  }
+
+  proceed(...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = {};
+      bh.local = {};
+      bh = this.sd_iwDUybU5pMhVbcwF(bh);
+      //appendnew_next_proceed
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_ceEKMOV6j3RiEWRi');
+    }
+  }
   //appendnew_flow_homeComponent_start
 
   sd_vGm5AyHgi7KgsyyZ(bh) {
@@ -134,6 +179,16 @@ export class homeComponent {
       page.bottomModal = false;
       page.modalContent = 'basic';
       page.overlay = false;
+
+      page.centerModal = false;
+      page.upgrade = false;
+      page.timing = false;
+      page.upgrading = true;
+      page.counter = 0;
+
+      function toFloat() {
+        return Math.floor(page.counter).toString();
+      }
       //appendnew_next_sd_oExKQDkOnt8mJjGF
       return bh;
     } catch (e) {
@@ -194,8 +249,12 @@ export class homeComponent {
 
       if (types === 'left') {
         left();
-      } else if (types === 'center') {
-        center();
+      } else if (types == 'close') {
+        page.overlay = false;
+        page.leftModal = false;
+        page.centerModal = false;
+        page.bottomModal = false;
+        page.insureModal = false;
       }
 
       //appendnew_next_sd_KViMFN3fLVMskZ68
@@ -207,6 +266,8 @@ export class homeComponent {
 
   sd_pi4OYqzmmUDlzvI0(bh) {
     try {
+      const page = this.page;
+      console.log('open');
       //appendnew_next_sd_pi4OYqzmmUDlzvI0
       return bh;
     } catch (e) {
@@ -222,6 +283,66 @@ export class homeComponent {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_09RIR1M40VmVl2Ce');
+    }
+  }
+
+  sd_IY16xYHT1tuTz823(bh) {
+    try {
+      const page = this.page; // page.centerModal=false
+      // page.upgrade=false
+      // page.timing=false
+      console.log(bh.input.open);
+      if (!page.centerModal) {
+        page.centerModal = true;
+        page.overlay = true;
+      } else {
+        page.centerModal = false;
+        page.overlay = false;
+      }
+      //appendnew_next_sd_IY16xYHT1tuTz823
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_IY16xYHT1tuTz823');
+    }
+  }
+
+  sd_PSUViJutHBh4gyY0(bh) {
+    try {
+      const page = this.page;
+      page.timing = true;
+
+      let targetValue = [10, 50, 100];
+
+      targetValue.map((v: any) => {
+        setTimeout(() => {
+          console.log(v);
+          page.counter = v;
+        }, 300);
+      });
+
+      setTimeout(() => {
+        page.upgrading = false;
+      }, 1000);
+      //appendnew_next_sd_PSUViJutHBh4gyY0
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_PSUViJutHBh4gyY0');
+    }
+  }
+
+  sd_iwDUybU5pMhVbcwF(bh) {
+    try {
+      const page = this.page;
+      page.centerModal = false;
+      page.overlay = false;
+      page.timing = false;
+      page.upgrading = true;
+
+      page.counter = 0;
+      //appendnew_next_sd_iwDUybU5pMhVbcwF
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_iwDUybU5pMhVbcwF');
     }
   }
 
